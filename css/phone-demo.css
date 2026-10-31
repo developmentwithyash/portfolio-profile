@@ -1,0 +1,1982 @@
+/* =============================================================================
+   SCROLL-DRIVEN PHONE PRODUCT DEMO SYSTEM
+   Three-project billboard upgrade: YAAN, ExamPrepOS, DRIFTBOUND
+   Architecture: pinned phone stage + sequential feature reveal panels
+   ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   DEMO BILLBOARD LAYOUT — Split: phone left, panels right
+   --------------------------------------------------------------------------- */
+
+.demo-billboard {
+  /* Override the centered column layout for a split horizontal layout */
+  min-height: auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  overflow: visible !important;
+}
+
+/* The outer scroll-track that creates the scroll distance for pinning */
+.demo-scroll-track {
+  position: relative;
+  width: 100%;
+}
+
+/* The container that holds both the phone and the panel column */
+.demo-stage {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+/* ---------------------------------------------------------------------------
+   PHONE COLUMN & DOCK — Glides dynamically beside the active card
+   --------------------------------------------------------------------------- */
+
+.demo-phone-col {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  z-index: 10;
+}
+
+.demo-phone-dock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 0;
+  will-change: transform;
+}
+
+.demo-phone-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  background: transparent;
+}
+
+.demo-phone-glow {
+  position: absolute;
+  width: 480px;
+  height: 320px;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.65;
+  will-change: transform;
+}
+
+.demo-phone-glow.glow-green {
+  background: radial-gradient(ellipse, rgba(11, 25, 44, 0.14) 0%, rgba(212, 85, 36, 0.06) 55%, transparent 75%);
+}
+
+.demo-phone-glow.glow-red {
+  background: radial-gradient(ellipse, rgba(212, 85, 36, 0.16) 0%, rgba(11, 25, 44, 0.05) 55%, transparent 75%);
+}
+
+.demo-phone-glow.glow-cyan {
+  background: radial-gradient(ellipse, rgba(46, 86, 143, 0.15) 0%, rgba(11, 25, 44, 0.05) 55%, transparent 75%);
+}
+
+@keyframes demo-glow-pulse {
+  0%   { opacity: 0.55; transform: scale(0.94); }
+  100% { opacity: 0.9;  transform: scale(1.06); }
+}
+
+.demo-phone-device {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* =========================================================================
+   FLAGSHIP SMARTPHONE CHASSIS & SCREEN DECK
+   ========================================================================= */
+
+.flagship-phone-chassis {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  background: #0B1320;
+  border: 3.5px solid #1A2840;
+  border-radius: 44px;
+  padding: 8px;
+  box-shadow:
+    0 30px 65px rgba(11, 25, 44, 0.20),
+    0 12px 24px rgba(11, 25, 44, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+}
+
+.flagship-phone-chassis.pulse-highlight {
+  box-shadow:
+    0 36px 80px rgba(11, 25, 44, 0.25),
+    0 15px 30px rgba(11, 25, 44, 0.16),
+    0 0 35px rgba(212, 85, 36, 0.35),
+    inset 0 0 0 2px rgba(212, 85, 36, 0.60) !important;
+  transform: scale(1.02) !important;
+}
+
+.phone-speaker-earpiece {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 3px;
+  background: #18201b;
+  border-radius: 2px;
+  z-index: 22;
+  pointer-events: none;
+}
+
+.phone-camera-punch {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #000;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  z-index: 25;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.95);
+  pointer-events: none;
+}
+
+.phone-glare-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 18;
+  border-top-left-radius: 36px;
+  border-top-right-radius: 36px;
+}
+
+.phone-live-pill {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 24;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  background: rgba(11, 19, 32, 0.90);
+  border: 1px solid rgba(212, 85, 36, 0.35);
+  border-radius: 980px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  color: #FAF7EE;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.phone-live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22C55E;
+  flex-shrink: 0;
+  animation: blink-dot 1.2s ease-in-out infinite;
+}
+
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.35; transform: scale(0.85); }
+}
+
+.phone-display-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1080 / 2400; /* Native Pixel 6 (9:20) ratio — screenshot fits 100% exactly */
+  border-radius: 36px;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-status-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 34px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 16;
+  color: rgba(244, 246, 244, 0.85);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  pointer-events: none;
+}
+
+.phone-status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.phone-status-network {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+.phone-home-indicator {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 3.5px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  z-index: 22;
+  pointer-events: none;
+}
+
+.phone-screens-deck {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.phone-screen-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px) scale(0.99);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.phone-screen-layer.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  z-index: 2;
+}
+
+@keyframes screen-pulse-flash {
+  0%   { opacity: 0.82; transform: scale(1.01); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.phone-screen-layer.pulse-screen {
+  animation: screen-pulse-flash 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.phone-screen-scroll-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+  background: #000;
+}
+
+.demo-stage.explore-mode .phone-screen-scroll-wrap {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  cursor: ns-resize;
+}
+
+.phone-screen-scroll-wrap::-webkit-scrollbar {
+  width: 4px;
+}
+
+.phone-screen-scroll-wrap::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.phone-screen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.phone-screen-dom-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.phone-explore-prompt {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 24;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(10, 15, 12, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 980px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: rgba(244, 246, 244, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.demo-stage.explore-mode .phone-explore-prompt {
+  display: inline-flex;
+}
+
+/* Phone Controls under Chassis */
+.phone-controls-row {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0 4px;
+}
+
+.phone-quick-pills {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.phone-quick-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 980px;
+  background: rgba(11, 25, 44, 0.05);
+  border: 1px solid rgba(11, 25, 44, 0.10);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--text-light-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.phone-quick-pill:hover {
+  background: rgba(11, 25, 44, 0.09);
+  color: var(--text-light-primary);
+  border-color: rgba(11, 25, 44, 0.20);
+}
+
+.phone-quick-pill.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #FFFFFF;
+}
+
+.phone-pill-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Phone col text: project identifier */
+.demo-phone-label {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-light-tertiary);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Progress bar under phone */
+.demo-progress-bar {
+  margin-top: 0.75rem;
+  width: 100px;
+  height: 2px;
+  background: var(--border-dark-subtle);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.demo-progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 2px;
+  background: var(--accent-primary);
+  transform-origin: left center;
+  transition: width 0.3s ease;
+}
+
+/* ---------------------------------------------------------------------------
+   PANELS COLUMN — scrolling feature reveal slides
+   --------------------------------------------------------------------------- */
+
+.demo-panels-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 10vh 0 20vh 0;
+}
+
+/* Project header inside panels column */
+.demo-project-header {
+  padding: 8vh 0 4vh 0;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.demo-project-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.demo-project-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-secondary-light);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 0.75rem;
+}
+
+.demo-project-eyebrow.eyebrow-red {
+  color: var(--accent-primary);
+}
+
+.demo-project-eyebrow.eyebrow-cyan {
+  color: #38bdf8;
+}
+
+.demo-project-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-light-primary);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.demo-project-desc {
+  font-size: 1.0625rem;
+  color: var(--text-light-muted);
+  line-height: 1.65;
+  max-width: 460px;
+}
+
+.demo-project-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+   FEATURE PANELS — Editorial Story Cards
+   --------------------------------------------------------------------------- */
+
+.demo-panel {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+  opacity: 0.35;
+  transform: translateY(28px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.demo-panel.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.demo-panel-card {
+  width: 100%;
+  max-width: 520px;
+  padding: 2.25rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(11, 25, 44, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgba(11, 25, 44, 0.06), 0 2px 8px rgba(11, 25, 44, 0.03);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.demo-panel.active .demo-panel-card {
+  background: #FFFFFF;
+  border-color: rgba(212, 85, 36, 0.45);
+  box-shadow:
+    0 20px 48px rgba(11, 25, 44, 0.10),
+    0 0 24px rgba(212, 85, 36, 0.14);
+}
+
+.demo-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.demo-feature-step {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  background: rgba(212, 85, 36, 0.08);
+  border: 1px solid rgba(212, 85, 36, 0.25);
+  border-radius: 6px;
+  padding: 3px 10px;
+}
+
+.demo-panel-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--text-light-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 980px;
+  background: rgba(11, 25, 44, 0.04);
+  border: 1px solid rgba(11, 25, 44, 0.09);
+  transition: all 0.3s ease;
+}
+
+.demo-panel-status-pill.active {
+  color: var(--accent-primary);
+  background: rgba(212, 85, 36, 0.10);
+  border-color: rgba(212, 85, 36, 0.35);
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.demo-feature-name {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  color: var(--text-light-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+}
+
+.demo-feature-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-light-muted);
+  margin-bottom: 1.5rem;
+}
+
+.demo-panel-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.demo-panel-spec-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--text-light-muted);
+  background: rgba(11, 25, 44, 0.04);
+  border: 1px solid rgba(11, 25, 44, 0.08);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+.demo-mobile-dock-slot {
+  display: none; /* Only visible on mobile/tablet viewports */
+}
+
+.demo-panel-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(11, 25, 44, 0.07);
+}
+
+.demo-view-on-phone-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 980px;
+  background: rgba(11, 25, 44, 0.05);
+  border: 1px solid rgba(11, 25, 44, 0.12);
+  color: var(--text-light-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.demo-view-on-phone-btn:hover {
+  background: rgba(11, 25, 44, 0.09);
+  border-color: var(--accent-primary);
+  color: var(--text-light-primary);
+}
+
+.demo-view-on-phone-btn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #FFFFFF;
+}
+
+.demo-panel-hint {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  color: var(--text-light-tertiary);
+}
+
+/* ---------------------------------------------------------------------------
+   YAAN — Screen UI Primitives
+   --------------------------------------------------------------------------- */
+
+.yaan-screen {
+  background: #000714;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.yaan-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem 0.75rem;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+.yaan-logo {
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #F4F6F4;
+}
+
+.yaan-logo span {
+  color: #38bdf8;
+}
+
+.yaan-subtitle {
+  font-size: 0.5625rem;
+  color: rgba(56, 189, 248, 0.7);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.yaan-status-badge {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+}
+
+.yaan-status-badge.secure {
+  background: rgba(94, 179, 138, 0.12);
+  border-color: rgba(94, 179, 138, 0.3);
+  color: var(--accent-secondary-light);
+}
+
+/* Waveform visualization */
+.yaan-waveform {
+  padding: 0.75rem;
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+}
+
+.yaan-waveform-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.9;
+}
+
+.yaan-waveform-label {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.75rem;
+  font-size: 0.5625rem;
+  color: rgba(56, 189, 248, 0.6);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* System telemetry rows */
+.yaan-telemetry {
+  padding: 0.5rem 0.75rem;
+}
+
+.yaan-telemetry-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.yaan-telemetry-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.yaan-telemetry-dot.green { background: #5EB38A; }
+.yaan-telemetry-dot.blue  { background: #38bdf8; }
+.yaan-telemetry-dot.amber { background: #F59E0B; }
+.yaan-telemetry-dot.dim   { background: rgba(255,255,255,0.2); }
+
+.yaan-telemetry-label {
+  font-size: 0.625rem;
+  color: rgba(244, 246, 244, 0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.yaan-telemetry-value {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #F4F6F4;
+}
+
+/* Auth button */
+.yaan-auth-btn {
+  margin: 0.75rem;
+  padding: 0.625rem 1rem;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.18) 0%, rgba(56, 189, 248, 0.06) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.yaan-auth-btn:hover {
+  background: rgba(56, 189, 248, 0.22);
+}
+
+.yaan-auth-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #38bdf8;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Voice intent screen */
+.yaan-voice-ring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0.75rem;
+  gap: 0.5rem;
+}
+
+.yaan-voice-circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.08);
+  border: 2px solid rgba(56, 189, 248, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yaan-voice-circle::before,
+.yaan-voice-circle::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  animation: voice-ring-pulse 2s ease-in-out infinite;
+}
+
+.yaan-voice-circle::before {
+  inset: -12px;
+  animation-delay: 0s;
+}
+
+.yaan-voice-circle::after {
+  inset: -24px;
+  animation-delay: 0.4s;
+}
+
+@keyframes voice-ring-pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50%       { opacity: 0.2; transform: scale(1.04); }
+}
+
+.yaan-voice-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #38bdf8;
+}
+
+.yaan-voice-label {
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(56, 189, 248, 0.6);
+}
+
+.yaan-latency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  background: rgba(94, 179, 138, 0.1);
+  border: 1px solid rgba(94, 179, 138, 0.3);
+  border-radius: 980px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--accent-secondary-light);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Encrypted vault screen */
+.yaan-vault-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  margin: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+}
+
+.yaan-vault-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.yaan-vault-label {
+  font-size: 0.6875rem;
+  color: rgba(244, 246, 244, 0.7);
+  flex: 1;
+}
+
+.yaan-vault-enc {
+  font-size: 0.5625rem;
+  color: var(--accent-secondary-light);
+  letter-spacing: 0.08em;
+}
+
+.yaan-cipher-tag {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  margin: 0.5rem 0.75rem 0;
+  background: rgba(94, 179, 138, 0.08);
+  border: 1px solid rgba(94, 179, 138, 0.25);
+  border-radius: 6px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--accent-secondary-light);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+/* ---------------------------------------------------------------------------
+   EXAMPREP — Screen UI Primitives
+   --------------------------------------------------------------------------- */
+
+.exam-screen {
+  background: #070b0f;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+
+.exam-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.exam-app-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #F4F6F4;
+}
+
+.exam-app-title span {
+  color: #E63946;
+}
+
+.exam-top-icons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.exam-icon-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem;
+}
+
+/* Roadmap card */
+.exam-section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(244, 246, 244, 0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.6rem 0.75rem 0.3rem;
+}
+
+.exam-mastery-card {
+  margin: 0 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.exam-mastery-ring {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.exam-mastery-ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.exam-mastery-ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 4;
+}
+
+.exam-mastery-ring-fill {
+  fill: none;
+  stroke: #3B82F6;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 163;
+  stroke-dashoffset: 21; /* ~87% filled: 163 * (1 - 0.87) ≈ 21 */
+  transition: stroke-dashoffset 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exam-mastery-pct {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #F4F6F4;
+}
+
+.exam-mastery-info {
+  flex: 1;
+}
+
+.exam-mastery-name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #F4F6F4;
+  margin-bottom: 0.15rem;
+}
+
+.exam-mastery-sub {
+  font-size: 0.6875rem;
+  color: rgba(244, 246, 244, 0.45);
+  margin-bottom: 0.35rem;
+}
+
+.exam-mastery-bar-wrap {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.exam-mastery-bar {
+  height: 100%;
+  width: 87%;
+  background: linear-gradient(90deg, #3B82F6, #60A5FA);
+  border-radius: 2px;
+}
+
+/* Roadmap list */
+.exam-roadmap-list {
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.exam-roadmap-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.exam-roadmap-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.exam-roadmap-dot.complete  { background: #22C55E; }
+.exam-roadmap-dot.active    { background: #3B82F6; }
+.exam-roadmap-dot.pending   { background: rgba(255, 255, 255, 0.2); }
+
+.exam-roadmap-name {
+  font-size: 0.6875rem;
+  color: rgba(244, 246, 244, 0.65);
+  flex: 1;
+}
+
+/* Focus Timer */
+.exam-focus-section {
+  margin: 0.5rem 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+}
+
+.exam-focus-label {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 246, 244, 0.4);
+  margin-bottom: 0.35rem;
+}
+
+.exam-focus-timer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #E63946;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+}
+
+.exam-focus-state {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.6875rem;
+  color: rgba(244, 246, 244, 0.4);
+}
+
+.exam-focus-state .exam-focus-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: blink-dot 1.2s ease-in-out infinite;
+}
+
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* Quiz card */
+.exam-quiz-card {
+  margin: 0 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+}
+
+.exam-quiz-subject {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 0.4rem;
+}
+
+.exam-quiz-q {
+  font-size: 0.75rem;
+  color: #F4F6F4;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.exam-quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.exam-quiz-opt {
+  padding: 0.3rem 0.5rem;
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.6875rem;
+  color: rgba(244, 246, 244, 0.65);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.exam-quiz-opt.selected {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #93C5FD;
+}
+
+.exam-quiz-opt.correct {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.35);
+  color: #86EFAC;
+}
+
+/* Analytics chart */
+.exam-analytics-card {
+  margin: 0 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+}
+
+.exam-analytics-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: rgba(244, 246, 244, 0.55);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.06em;
+}
+
+.exam-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.3rem;
+  height: 60px;
+}
+
+.exam-bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.exam-bar {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  min-height: 4px;
+  transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exam-bar-label {
+  font-size: 0.5rem;
+  color: rgba(244, 246, 244, 0.35);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ---------------------------------------------------------------------------
+   DRIFTBOUND — Screen UI Primitives
+   --------------------------------------------------------------------------- */
+
+.drift-screen {
+  background: #000305;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.drift-game-view {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.drift-game-bg {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(180deg,
+      #1a2744 0%,
+      #0a1628 40%,
+      #161210 65%,
+      #0a0a0a 100%
+    );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Road stripe simulation */
+.drift-road {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(40,40,40,0) 0%, rgba(50,50,50,0.6) 100%);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
+}
+
+.drift-road-center {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 60%;
+  background: repeating-linear-gradient(
+    to top,
+    rgba(255,255,255,0.7) 0px,
+    rgba(255,255,255,0.7) 8px,
+    transparent 8px,
+    transparent 18px
+  );
+  animation: road-scroll 0.4s linear infinite;
+}
+
+@keyframes road-scroll {
+  from { background-position: 0 0; }
+  to   { background-position: 0 26px; }
+}
+
+/* Mountains silhouette */
+.drift-mountains {
+  position: absolute;
+  bottom: 45%;
+  left: 0;
+  right: 0;
+  height: 55px;
+  background: linear-gradient(to right, #1a2540 0%, #243050 30%, #1a2540 60%, #263050 100%);
+  clip-path: polygon(0% 100%, 8% 30%, 16% 65%, 26% 15%, 36% 55%, 48% 0%, 58% 45%, 68% 10%, 78% 50%, 88% 20%, 96% 45%, 100% 100%);
+}
+
+.drift-sky-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100px;
+  background: radial-gradient(ellipse, rgba(255, 100, 30, 0.35) 0%, transparent 70%);
+  filter: blur(8px);
+}
+
+/* Car icon (CSS art) */
+.drift-car {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 44px;
+  height: 24px;
+}
+
+.drift-car-body {
+  width: 100%;
+  height: 14px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #1a1a2e);
+  border-radius: 5px 5px 2px 2px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 8px rgba(255, 50, 50, 0.4);
+}
+
+.drift-car-body::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 4px;
+  right: 4px;
+  height: 6px;
+  background: rgba(50, 50, 80, 0.8);
+  border-radius: 0 0 3px 3px;
+}
+
+.drift-smoke {
+  position: absolute;
+  bottom: 22%;
+  left: 50%;
+  display: flex;
+  gap: 2px;
+  animation: smoke-drift 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes smoke-drift {
+  0%   { transform: translate(-28px, 0) scale(1); opacity: 0.6; }
+  100% { transform: translate(-36px, -4px) scale(1.1); opacity: 0.3; }
+}
+
+.drift-smoke-puff {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(200, 200, 200, 0.4);
+  filter: blur(2px);
+}
+
+/* HUD overlay */
+.drift-hud {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.4rem 0.5rem;
+  pointer-events: none;
+}
+
+.drift-hud-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.drift-game-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #F4F6F4;
+  text-shadow: 0 0 8px rgba(0,0,0,0.8);
+}
+
+.drift-player-id {
+  font-size: 0.5625rem;
+  color: rgba(244, 246, 244, 0.55);
+  letter-spacing: 0.1em;
+}
+
+.drift-hud-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.drift-score {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #F4F6F4;
+  text-shadow: 0 0 8px rgba(0,0,0,0.8);
+}
+
+.drift-drift-indicator {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #22C55E;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  animation: drift-blink 0.8s step-end infinite;
+}
+
+@keyframes drift-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.drift-speed-block {
+  text-align: right;
+}
+
+.drift-speed {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #F4F6F4;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(0,0,0,0.9);
+}
+
+.drift-speed-unit {
+  font-size: 0.5rem;
+  color: rgba(244, 246, 244, 0.5);
+}
+
+.drift-gear {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(244, 246, 244, 0.7);
+}
+
+/* Telemetry panel below game view */
+.drift-telemetry {
+  padding: 0.625rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.drift-tel-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.drift-tel-label {
+  font-size: 0.5625rem;
+  color: rgba(244, 246, 244, 0.35);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: 55px;
+  flex-shrink: 0;
+}
+
+.drift-tel-bar-wrap {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.drift-tel-bar {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.drift-tel-bar.rpm-bar  { background: linear-gradient(90deg, #3B82F6, #60A5FA); }
+.drift-tel-bar.grip-bar { background: linear-gradient(90deg, #E63946, #FF6B6B); }
+
+.drift-tel-value {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #F4F6F4;
+  width: 32px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* GC allocation badge */
+.drift-gc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.625rem;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 6px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #86EFAC;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0 0.75rem 0.5rem;
+}
+
+.drift-gc-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22C55E;
+}
+
+/* ---------------------------------------------------------------------------
+   INTERACTION INDICATOR — visible when demo is hoverable
+   --------------------------------------------------------------------------- */
+
+.demo-explore-cue {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.375rem 0.75rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 980px;
+  font-size: 0.6875rem;
+  color: rgba(244, 246, 244, 0.55);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+.demo-phone-stage:hover .demo-explore-cue {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.demo-explore-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-secondary-light);
+}
+
+/* ---------------------------------------------------------------------------
+   PRESENTATION vs EXPLORE MODE TOGGLE
+   --------------------------------------------------------------------------- */
+
+.demo-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  align-self: center;
+}
+
+.demo-mode-btn {
+  padding: 0.3rem 0.75rem;
+  border-radius: 980px;
+  border: 1px solid var(--border-dark-subtle);
+  background: transparent;
+  color: var(--text-light-tertiary);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.demo-mode-btn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #fff;
+}
+
+.demo-mode-btn:hover:not(.active) {
+  border-color: var(--border-dark-active);
+  color: var(--text-light-primary);
+}
+
+/* ---------------------------------------------------------------------------
+   EXPLORE MODE — interactive state where panels are browsable
+   --------------------------------------------------------------------------- */
+
+.demo-stage.explore-mode .demo-panels-col {
+  cursor: default;
+}
+
+.demo-stage.explore-mode .demo-panel {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ---------------------------------------------------------------------------
+   REDUCED MOTION — disable all animations, show static fallback
+   --------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-phone-device {
+    animation: none !important;
+  }
+
+  .demo-phone-glow {
+    animation: none !important;
+  }
+
+  .yaan-voice-circle::before,
+  .yaan-voice-circle::after {
+    animation: none !important;
+  }
+
+  .drift-road-center {
+    animation: none !important;
+  }
+
+  .drift-smoke {
+    animation: none !important;
+  }
+
+  .drift-drift-indicator {
+    animation: none !important;
+  }
+
+  .exam-focus-state .exam-focus-dot {
+    animation: none !important;
+  }
+
+  .demo-panel {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .demo-project-header {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   RESPONSIVE — Tablet & Mobile Viewports
+   --------------------------------------------------------------------------- */
+
+@media (max-width: 960px) {
+  .demo-stage {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1.25rem;
+  }
+
+  .demo-phone-col {
+    display: none; /* Phone docks directly inside the active information card on mobile */
+  }
+
+  .demo-mobile-dock-slot {
+    width: 100%;
+    margin: 1.5rem 0 1rem 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-height: 0;
+  }
+
+  .demo-mobile-dock-slot:empty {
+    display: none;
+  }
+
+  .demo-mobile-dock-slot .demo-phone-dock {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    padding: 0;
+    transform: none !important;
+  }
+
+  .flagship-phone-chassis {
+    width: 250px;
+    max-width: 90vw;
+    height: auto;
+    border-radius: 36px;
+    padding: 6px;
+  }
+
+  .phone-display-viewport {
+    border-radius: 30px;
+  }
+
+  .phone-controls-row {
+    max-width: 280px;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .demo-phone-label {
+    margin-top: 0.5rem;
+    font-size: 0.625rem;
+  }
+
+  .demo-progress-bar {
+    margin-top: 0.4rem;
+  }
+
+  .demo-panels-col {
+    padding: 1.5rem 0 6vh 0;
+    gap: 2.5rem;
+  }
+
+  .demo-panel {
+    min-height: auto;
+    padding: 1rem 0;
+    opacity: 1;
+    transform: none;
+  }
+
+  .demo-panel-card {
+    max-width: 100%;
+    padding: 1.75rem;
+  }
+
+  .demo-project-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .flagship-phone-chassis {
+    width: 220px;
+    height: auto;
+    border-radius: 32px;
+  }
+
+  .phone-display-viewport {
+    border-radius: 26px;
+  }
+
+  .demo-panel-card {
+    padding: 1.25rem;
+  }
+
+  .demo-feature-name {
+    font-size: 1.25rem;
+  }
+
+  .demo-feature-desc {
+    font-size: 0.9375rem;
+  }
+
+  .demo-project-title {
+    font-size: 1.45rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   BILLBOARD DEMO INTEGRATION — override billboard-unit for demo sections
+   --------------------------------------------------------------------------- */
+
+.billboard-unit.demo-billboard {
+  padding: 0;
+  min-height: auto;
+  text-align: left;
+  align-items: stretch;
+}
+
+.billboard-unit.demo-billboard .billboard-content {
+  max-width: none;
+  width: 100%;
+  padding: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   AUTHENTIC EMULATOR SCREENSHOT HARDWARE FRAME
+   --------------------------------------------------------------------------- */
+
+.emulator-phone-chassis {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background: #0d120f;
+  border: 3px solid #232d26;
+  border-radius: 40px;
+  padding: 10px;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.9),
+    0 10px 25px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-apple), box-shadow 0.4s ease;
+}
+
+.demo-panel:hover .emulator-phone-chassis {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.95),
+    0 15px 35px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(94, 179, 138, 0.2);
+}
+
+.emulator-camera-punch {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.emulator-screen-scroll-container {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  background: #000;
+  -webkit-overflow-scrolling: touch;
+}
+
+.emulator-screen-scroll-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.emulator-screen-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+
+.emulator-screen-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.emulator-live-badge {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  background: rgba(10, 15, 12, 0.85);
+  border: 1px solid rgba(94, 179, 138, 0.35);
+  border-radius: 980px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  color: var(--accent-secondary-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.emulator-live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: blink-dot 1.2s ease-in-out infinite;
+}
+
+.emulator-scroll-hint {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(10, 15, 12, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 980px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: rgba(244, 246, 244, 0.7);
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.emulator-phone-chassis:hover .emulator-scroll-hint {
+  opacity: 0;
+}

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>YaanStack Technologies — Autonomous Digital Foundry &amp; Engineering Studio</title>
+  <meta name="description" content="YaanStack Technologies — High-velocity digital product foundry &amp; engineering studio architecting sovereign mobile platforms, 21-day SaaS MVPs, and autonomous AI systems.">
+  <meta name="theme-color" content="#FAF7EE">
+
+  <!-- Open Graph & Social Cards -->
+  <meta property="og:title" content="YaanStack Technologies — Autonomous Digital Foundry &amp; Engineering Studio">
+  <meta property="og:description" content="Architecting sovereign mobile platforms, 21-day SaaS MVPs, and fluid native interfaces.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/yaan-preview.jpg">
+
+  <link rel="stylesheet" href="css/styles.css?v=4.1.0">
+  <link rel="stylesheet" href="css/phone-demo.css?v=4.1.0">
+
+  <!-- Critical Theme Enforcement: Guarantees Tactile Cream Canvas & Navy Blue Even If Stylesheet Is Cached -->
+  <style>
+    :root {
+      --canvas-primary: #FAF7EE !important;
+      --canvas-elevated: #FFFFFF !important;
+      --canvas-card: #FFFFFF !important;
+      --apple-black: #FAF7EE !important;
+      --apple-dark-bg: #FAF7EE !important;
+      --apple-card-dark: #FFFFFF !important;
+      --text-white: #0B192C !important;
+      --text-light-primary: #0B192C !important;
+      --text-primary: #0B192C !important;
+      --text-light-muted: #384C66 !important;
+      --text-secondary: #384C66 !important;
+      --accent-primary: #D45524 !important;
+      --accent-secondary: #0B192C !important;
+    }
+    html, body {
+      background-color: #FAF7EE !important;
+      background: #FAF7EE !important;
+      color: #0B192C !important;
+    }
+    .billboard-unit,
+    .billboard-unit.theme-dark,
+    .billboard-unit.theme-titanium,
+    .billboard-unit.theme-elevated {
+      background-color: #FAF7EE !important;
+      background: #FAF7EE !important;
+    }
+    .demo-stage {
+      background: transparent !important;
+    }
+  </style>
+</head>
+<body class="apple-theme" style="background-color: #FAF7EE !important; color: #0B192C !important;">
+  <!-- Subtle Ambient Cursor Spotlight (GPU Accelerated) -->
+  <div id="ambient-spotlight" aria-hidden="true"></div>
+
+  <!-- Top Compositor Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- =======================================================================
+       1. APPLE GLOBAL NAVIGATION (44px Frosted Acrylic Header)
+       ======================================================================= -->
+  <header class="apple-globalnav" id="site-header">
+    <div class="apple-globalnav-content">
+      <a href="#hero" class="apple-logo-link" id="nav-brand" aria-label="YaanStack Home">
+        <svg class="apple-logo-glyph brand-monogram" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.75">
+          <circle cx="10" cy="10" r="8.2" stroke="currentColor" stroke-width="1.4" opacity="0.6"/>
+          <path d="M6.5 6.5L10 11.2L13.5 6.5M10 11.2V14.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="apple-logo-text">YaanStack</span>
+      </a>
+
+      <nav class="apple-nav-menu" aria-label="Global Navigation">
+        <ul class="apple-nav-list">
+          <li><a href="#hero" class="apple-nav-link">Overview</a></li>
+          <li><a href="#billboard-yaan" class="apple-nav-link">YAAN</a></li>
+          <li><a href="#billboard-examprep" class="apple-nav-link">ExamPrepOS</a></li>
+          <li><a href="#billboard-driftbound" class="apple-nav-link">DRIFTBOUND</a></li>
+          <li><a href="#projects" class="apple-nav-link">Projects</a></li>
+          <li><a href="#philosophy" class="apple-nav-link">Philosophy</a></li>
+          <li><a href="#services" class="apple-nav-link">Capabilities</a></li>
+          <li><a href="#compare" class="apple-nav-link">Tech Specs</a></li>
+          <li><a href="#contact" class="apple-nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="apple-nav-actions">
+        <a href="#projects" class="apple-nav-icon-link" id="nav-search-btn" aria-label="Search and filter systems">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="m11.5 11.5 3 3"/>
+            <circle cx="7" cy="7" r="4.5"/>
+          </svg>
+        </a>
+        <a href="#contact" class="apple-nav-icon-link" id="nav-contact-cta" aria-label="Contact and Advisory">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2.5 4h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/>
+            <path d="m2 5 6 4 6-4"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       2. APPLE ANNOUNCEMENT RIBBON (40px)
+       ======================================================================= -->
+  <aside class="apple-ribbon" aria-label="Announcement">
+    <div class="apple-ribbon-inner">
+      <span class="ribbon-pulse" aria-hidden="true"></span>
+      <span>Available for select Q4/Q1 Product Sprints &amp; Engineering Partnerships.</span>
+      <a href="#contact" class="apple-ribbon-link">Start a Project <span class="arrow-glyph" aria-hidden="true">›</span></a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <!-- =======================================================================
+         3. HERO BILLBOARD: YAAN (THE KEYNOTE PRODUCT UNVEIL)
+         ======================================================================= -->
+    <section class="billboard-unit theme-titanium hero-billboard" id="hero">
+      <div class="billboard-content">
+        <span class="billboard-eyebrow">YAANSTACK TECHNOLOGIES &bull; AUTONOMOUS DIGITAL FOUNDRY</span>
+        <h1 class="billboard-headline">
+          High-Velocity Software. <span class="red-accent-text tangerine-accent-text gold-gradient-text">Engineered to Scale.</span>
+        </h1>
+        <p class="billboard-subhead">
+          We engineer sovereign mobile apps, high-conversion web platforms, and autonomous AI systems. From 21-day SaaS MVPs to enterprise-grade native applications.
+        </p>
+
+        <div class="billboard-ctas">
+          <a href="#billboard-yaan" class="btn-apple-primary" id="btn-hero-projects">
+            <span>Explore Flagship</span>
+          </a>
+
+          <button class="btn-copy-email" id="btn-copy-email" type="button" aria-label="Copy direct email address to clipboard">
+            <span class="copy-icon" aria-hidden="true">⧉</span>
+            <span id="copy-btn-text">Copy Email</span>
+          </button>
+
+          <a href="mailto:work.developmentwithyash@gmail.com" class="btn-apple-link" id="btn-hero-email">
+            <span>Direct Inquiries</span>
+            <span class="chevron" aria-hidden="true">›</span>
+          </a>
+        </div>
+
+        <!-- Flagship Hardware / Device Stage in Hero (3D Floating Device) -->
+        <div class="billboard-media-wrap hero-media-wrap hero-stage-3d">
+          <div class="hero-device-glow" aria-hidden="true"></div>
+          <div class="hero-floating-device" id="hero-floating-device">
+            <img class="billboard-media floating-phone-media" src="assets/yaan-preview.png?v=3.3.0" alt="YAAN Sovereign Mobile Interface" loading="eager">
+          </div>
+        </div>
+
+        <!-- Apple "Pro Performance" Metrics Strip -->
+        <div class="proof-metrics-grid" role="region" aria-label="Performance Benchmarks">
+          <div class="metric-card">
+            <span class="metric-val">50+</span>
+            <span class="metric-lbl">Specialized AI Agents in Workforce</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-val">12+</span>
+            <span class="metric-lbl">Production Platforms Shipped</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-val">21 Days</span>
+            <span class="metric-lbl">Average SaaS MVP Delivery</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-val">100%</span>
+            <span class="metric-lbl">Verified Client Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. FULL-BLEED BILLBOARD: YAAN — AUTONOMOUS ACTION NAVIGATOR
+         ======================================================================= -->
+    <section class="billboard-unit theme-dark" id="billboard-yaan">
+      <div class="billboard-content">
+        <span class="billboard-eyebrow">FLAGSHIP SYSTEM</span>
+        <h2 class="billboard-headline">YAAN. Sovereign Mobile OS.</h2>
+        <p class="billboard-subhead">
+          Privacy-first, local-first personal OS for high-output engineers. Offline encrypted vault with AES-GCM-256 and zero network latency.
+        </p>
+        <div class="billboard-ctas">
+          <button class="btn-apple-primary" type="button" onclick="window.__openProjectModalDirect?.('yaan')">Explore Architecture</button>
+          <a class="btn-apple-link" href="https://github.com/yashsiwacha/yaan" target="_blank" rel="noopener noreferrer">
+            <span>View on GitHub</span>
+            <span class="chevron" aria-hidden="true">›</span>
+          </a>
+        </div>
+
+        <div class="billboard-media-wrap hero-stage-3d billboard-stage-3d">
+          <div class="hero-device-glow" aria-hidden="true"></div>
+          <div class="hero-floating-device">
+            <img class="billboard-media floating-phone-media" src="assets/yaan-preview.png?v=3.3.0" alt="YAAN Sovereign Mobile Interface" loading="lazy">
+          </div>
+        </div>
+
+        <div class="billboard-spec-strip">
+          <div class="spec-chip"><span class="spec-chip-label">Intent Triage:</span> <span class="spec-chip-value spec-chip-gold">&lt; 150ms</span></div>
+          <div class="spec-chip"><span class="spec-chip-label">Encryption:</span> <span class="spec-chip-value">AES-GCM-256</span></div>
+          <div class="spec-chip"><span class="spec-chip-label">Architecture:</span> <span class="spec-chip-value">Offline-First</span></div>
+          <div class="spec-chip"><span class="spec-chip-label">Stack:</span> <span class="spec-chip-value">Kotlin / Compose Multiplatform</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. FULL-BLEED BILLBOARD: EXAMPREPOS (Apple Studio Titanium Billboard)
+         ======================================================================= -->
+    <section class="billboard-unit theme-titanium" id="billboard-examprep">
+      <div class="billboard-content">
+        <span class="billboard-eyebrow red-accent-text">ANDROID NATIVE</span>
+        <h2 class="billboard-headline">ExamPrepOS. Distraction-Free.</h2>
+        <p class="billboard-subhead">
+          Intelligent mastery model with OLED distraction-free study operating system. 120 FPS frame pacing with Room DB local cache.
+        </p>
+        <div class="billboard-ctas">
+          <button class="btn-apple-primary" type="button" onclick="window.__openProjectModalDirect?.('examprep')">Explore System</button>
+          <a class="btn-apple-link" href="https://github.com/yashsiwacha/ExamPrepOS" target="_blank" rel="noopener noreferrer">
+            <span>Inspect Repository</span>
+            <span class="chevron" aria-hidden="true">›</span>
+          </a>
+        </div>
+
+        <div class="billboard-media-wrap hero-stage-3d billboard-stage-3d">
+          <div class="hero-device-glow glow-red" aria-hidden="true"></div>
+          <div class="hero-floating-device">
+            <img class="billboard-media floating-phone-media" src="assets/examprep-preview.png?v=3.3.0" alt="ExamPrepOS Android Native System" loading="lazy">
+          </div>
+        </div>
+
+        <div class="billboard-spec-strip">
+          <div class="spec-chip"><span class="spec-chip-label">Frame Budget:</span> <span class="spec-chip-value">120 FPS / 8ms</span></div>
+          <div class="spec-chip"><span class="spec-chip-label">Storage Model:</span> <span class="spec-chip-value">Offline-First Room</span></div>
+          <div class="spec-chip"><span class="spec-chip-label">Display Mode:</span> <span class="spec-chip-value">OLED Pure Black</span></div>
+          <div class="spec-chip spec-chip-pass"><span class="spec-chip-label">Unit Tests:</span> <span class="spec-chip-value">342 Passing Tests</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. FULL-BLEED BILLBOARD: DRIFTBOUND: OPEN ROADS
+         ======================================================================= -->
+    <section class="billboard-unit theme-dark" id="billboard-driftbound">
+      <div class="billboard-content">
+        <span class="billboard-eyebrow">REAL-TIME 3D GRAPHICS</span>
+        <h2 class="billboard-headline">DRIFTBOUND. Pure Physics.</h2>
+        <p class="billboard-subhead">
+          Stylized 3D open-world mobile street racing &amp; drifting in Unity 6 LTS. Zero-allocation simulation loop with 0 B/frame GC churn.
+        </p>
+        <div class="billboard-ctas">
+          <button class="btn-apple-primary" type="button" onclick="window.__openProjectModalDirect?.('driftbound')">Inspect Engine</button>
+          <a class="btn-apple-link" href="#contact">
+            <span>Request Demo Build</span>
+            <span class="chevron" aria-hidden="true">›</span>
+          </a>
+        </div>
+
+        <div class="billboard-media-wrap hero-stage-3d billboard-stage-3d">
+          <div class="hero-device-glow glow-cyan" aria-hidden="true"></div>
+          <div class="hero-floating-device">
+            <img class="billboard-media floating-phone-media" src="assets/driftbound-preview.png?v=3.3.0" alt="DRIFTBOUND Open Roads Unity 6 LTS" loading="lazy">
+          </div>
+        </div>
+
+        <div class="billboard-spec-strip">
+          <div class="spec-chip"><span class="spec-chip-label">Target Framerate:</span> <span class="spec-chip-value spec-chip-gold">60 FPS Native</span></div>
+          <div class="spec-chip"><span class="spec-chip-label">GC Allocation:</span> <span class="spec-chip-value">0 B / frame</span></div>
+          <div class="spec-chip"><span class="spec-chip-label">Graphics API:</span> <span class="spec-chip-value">Vulkan / Metal</span></div>
+          <div class="spec-chip"><span class="spec-chip-label">Engine:</span> <span class="spec-chip-value">Unity 6 LTS URP</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. APPLE 2x3 PROMO GRID (Cupertino Signature Section)
+         ======================================================================= -->
+    <section class="section-promo" aria-label="Engineering Promos">
+      <div class="promo-grid">
+        <!-- Promo 1: Colab-Claude Bridge -->
+        <div class="promo-tile" onclick="window.__openProjectModalDirect?.('colab-bridge')">
+          <span class="promo-eyebrow">SYSTEMS INFRASTRUCTURE</span>
+          <h3 class="promo-headline">Colab-Claude Bridge</h3>
+          <p class="promo-subhead">Authenticated streaming reverse-proxy gateway connecting local developer CLIs to remote GPU clusters.</p>
+          <div class="promo-ctas">
+            <span class="btn-apple-link">Learn more <span class="chevron">›</span></span>
+          </div>
+          <div class="promo-media-wrap">
+            <img class="promo-media" src="assets/bridge-preview.jpg" alt="Colab-Claude Reverse Proxy Terminal" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Promo 2: EOS & BOS -->
+        <div class="promo-tile" onclick="window.__openProjectModalDirect?.('eos-bos')">
+          <span class="promo-eyebrow">ENTERPRISE PLATFORM</span>
+          <h3 class="promo-headline">EOS &amp; BOS Architecture</h3>
+          <p class="promo-subhead">State-machine-driven autonomous engineering &amp; agency operations platform with 11 canonical gates.</p>
+          <div class="promo-ctas">
+            <span class="btn-apple-link">Learn more <span class="chevron">›</span></span>
+          </div>
+          <div class="promo-media-wrap">
+            <img class="promo-media" src="assets/eos-preview.jpg" alt="EOS & BOS Control Room" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Promo 3: On-Device AI -->
+        <div class="promo-tile" onclick="window.__openProjectModalDirect?.('yaan')">
+          <span class="promo-eyebrow">NEURAL ENGINE</span>
+          <h3 class="promo-headline">Sub-150ms Edge Intent</h3>
+          <p class="promo-subhead">On-device local speech triage and intent classification running without cloud roundtrips.</p>
+          <div class="promo-ctas">
+            <span class="btn-apple-link">Explore Neural Model <span class="chevron">›</span></span>
+          </div>
+          <div class="promo-media-wrap">
+            <img class="promo-media" src="assets/yaan-preview.jpg" alt="Edge NLP Intent Engine" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Promo 4: 120 FPS Pacing -->
+        <div class="promo-tile" onclick="window.__openProjectModalDirect?.('examprepos')">
+          <span class="promo-eyebrow">PROMOTION DISPLAY</span>
+          <h3 class="promo-headline">120 FPS. Zero Leaks.</h3>
+          <p class="promo-subhead">Precision frame pacing and local Room SQLite cache designed for distraction-free mastery.</p>
+          <div class="promo-ctas">
+            <span class="btn-apple-link">Inspect Frame Pacing <span class="chevron">›</span></span>
+          </div>
+          <div class="promo-media-wrap">
+            <img class="promo-media" src="assets/examprep-preview.jpg" alt="120 FPS Frame Pacing" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Promo 5: Systems Philosophy -->
+        <div class="promo-tile" onclick="location.href='#philosophy'">
+          <span class="promo-eyebrow">ARCHITECTURE DISCIPLINE</span>
+          <h3 class="promo-headline">Hardware Sovereignty</h3>
+          <p class="promo-subhead">Offline-first hardware vaults, zero network stalls, and verifiable TDD delivery loops.</p>
+          <div class="promo-ctas">
+            <span class="btn-apple-link">Explore Values <span class="chevron">›</span></span>
+          </div>
+          <div class="promo-media-wrap">
+            <img class="promo-media" src="assets/driftbound-preview.jpg" alt="Hardware Sovereignty" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Promo 6: Capabilities Preview -->
+        <div class="promo-tile" onclick="location.href='#services'">
+          <span class="promo-eyebrow">SPECIALIST ADVISORY</span>
+          <h3 class="promo-headline">Fractional Staff Lead</h3>
+          <p class="promo-subhead">Senior architectural leadership for offline mobile OS, local AI inference, and high-performance graphics.</p>
+          <div class="promo-ctas">
+            <span class="btn-apple-link">View Capabilities <span class="chevron">›</span></span>
+          </div>
+          <div class="promo-media-wrap">
+            <img class="promo-media" src="assets/yaan-preview.jpg" alt="Specialist Advisory" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. FILTERABLE BENTO DIRECTORY (All Flagship Projects)
+         ======================================================================= -->
+    <section class="section" id="projects">
+      <div class="section-header-center">
+        <div class="section-eyebrow">PRODUCT SHOWCASE</div>
+        <h2 class="section-title">Explore All Systems</h2>
+        <p class="section-desc">Interactive directory of production mobile apps, systems infrastructure, and real-time graphics.</p>
+      </div>
+
+      <!-- Apple Segmented Control Tab Bar -->
+      <div class="filter-container">
+        <div class="filter-tab-bar" id="category-filter-bar" role="tablist" aria-label="Project Categories">
+          <div class="filter-pill-indicator" id="filter-pill-indicator" aria-hidden="true"></div>
+          <!-- Populated dynamically via portfolio-data.js -->
+        </div>
+        <span class="project-counter" id="project-counter-badge">Showing 5 projects</span>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="projects-bento-grid" id="projects-grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         9. APPLE TECH SPECS COMPARISON STRIP
+         ======================================================================= -->
+    <section class="section-compare" id="compare">
+      <div class="compare-header">
+        <div class="compare-eyebrow">WHICH ARCHITECTURE FITS YOUR PRODUCT?</div>
+        <h2 class="compare-title">Compare Systems</h2>
+      </div>
+
+      <!-- Apple Side-by-Side Product Previews -->
+      <div class="compare-devices-grid">
+        <div class="compare-device-card">
+          <div class="compare-thumb-wrap">
+            <img src="assets/yaan-preview.jpg" alt="YAAN Sovereign Mobile OS" class="compare-thumb" loading="lazy">
+          </div>
+          <h3 class="compare-name">YAAN</h3>
+          <p class="compare-category-tag">Sovereign Mobile OS</p>
+          <button class="btn-apple-primary btn-apple-compare" type="button" onclick="window.__openProjectModalDirect?.('yaan')">Explore Specs</button>
+        </div>
+
+        <div class="compare-device-card">
+          <div class="compare-thumb-wrap">
+            <img src="assets/examprep-preview.jpg" alt="ExamPrepOS Android Native" class="compare-thumb" loading="lazy">
+          </div>
+          <h3 class="compare-name">ExamPrepOS</h3>
+          <p class="compare-category-tag">Distraction-Free OS</p>
+          <button class="btn-apple-primary btn-apple-compare" type="button" onclick="window.__openProjectModalDirect?.('examprepos')">Explore Specs</button>
+        </div>
+
+        <div class="compare-device-card">
+          <div class="compare-thumb-wrap">
+            <img src="assets/driftbound-preview.jpg" alt="DRIFTBOUND Unity 6" class="compare-thumb" loading="lazy">
+          </div>
+          <h3 class="compare-name">DRIFTBOUND</h3>
+          <p class="compare-category-tag">Real-Time 3D Physics</p>
+          <button class="btn-apple-primary btn-apple-compare" type="button" onclick="window.__openProjectModalDirect?.('driftbound')">Explore Specs</button>
+        </div>
+      </div>
+
+      <div class="compare-table-wrap">
+        <table class="compare-matrix-table" aria-label="System Comparison">
+          <thead>
+            <tr>
+              <th scope="col">Specification</th>
+              <th scope="col">YAAN</th>
+              <th scope="col">ExamPrepOS</th>
+              <th scope="col">DRIFTBOUND</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Domain Category</td>
+              <td>Autonomous Action Navigator</td>
+              <td>Offline Learning OS</td>
+              <td>Open-World 3D Racing</td>
+            </tr>
+            <tr>
+              <td>Target Platform</td>
+              <td>Kotlin Multiplatform</td>
+              <td>Android 14+ / Compose M3</td>
+              <td>Unity 6 LTS / Vulkan</td>
+            </tr>
+            <tr>
+              <td>Latency Benchmark</td>
+              <td><span class="compare-badge">&lt; 150ms Edge Intent</span></td>
+              <td><span class="compare-badge">120 FPS / 8ms Pacing</span></td>
+              <td><span class="compare-badge">60 FPS Native</span></td>
+            </tr>
+            <tr>
+              <td>Storage &amp; State</td>
+              <td>SQLDelight (AES-GCM-256)</td>
+              <td>Room DB (Offline Cache)</td>
+              <td>Deterministic Ring Buffer</td>
+            </tr>
+            <tr>
+              <td>Memory Allocation</td>
+              <td>Immutable StateFlow</td>
+              <td>Zero Recomposition Leaks</td>
+              <td><span class="compare-badge">0 B / frame GC Churn</span></td>
+            </tr>
+            <tr>
+              <td>Automated Test Suite</td>
+              <td>129 Unit Tests</td>
+              <td>342 Passing Tests</td>
+              <td>Physics Validation Harness</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         10. SYSTEMS PHILOSOPHY (Apple Values Standard)
+         ======================================================================= -->
+    <section class="section" id="philosophy">
+      <div class="section-header-center">
+        <div class="section-eyebrow">ENGINEERING VALUES</div>
+        <h2 class="section-title">Architecture Driven by Principles</h2>
+        <p class="section-desc">Hardware sovereignty is non-negotiable. Performance is a design feature. Tested correctness before code ships.</p>
+      </div>
+
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <div class="card-num">01</div>
+          <h3 class="card-heading">Offline-First Sovereignty</h3>
+          <p class="card-body-text">Applications should never stall on network connectivity. Zero-knowledge cryptographic vaults store AES-GCM-256 encrypted data directly on user hardware.</p>
+          <div class="card-badge-row">
+            <span class="mini-tag">AES-256</span>
+            <span class="mini-tag">SQLDelight</span>
+            <span class="mini-tag">Keychain</span>
+          </div>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="card-num">02</div>
+          <h3 class="card-heading">Sub-150ms Intent Latency</h3>
+          <p class="card-body-text">Local NLP models classify voice thoughts into domain actions instantly, eliminating roundtrip latency before cloud servers can even negotiate TLS.</p>
+          <div class="card-badge-row">
+            <span class="mini-tag">Local NLP</span>
+            <span class="mini-tag">On-Device AI</span>
+            <span class="mini-tag">Speech Pipeline</span>
+          </div>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="card-num">03</div>
+          <h3 class="card-heading">Zero-Allocation Pacing</h3>
+          <p class="card-body-text">In real-time 3D and native mobile interfaces, memory churn causes garbage collection hitches. We isolate simulation loops for rock-solid 60–120 FPS frame pacing.</p>
+          <div class="card-badge-row">
+            <span class="mini-tag">0 B GC Churn</span>
+            <span class="mini-tag">Compose M3</span>
+            <span class="mini-tag">Vulkan / Metal</span>
+          </div>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="card-num">04</div>
+          <h3 class="card-heading">Verifiable TDD Delivery</h3>
+          <p class="card-body-text">No code ships without automated assertion suites. PRD-to-production vertical slices accompanied by continuous quality gates and architecture records.</p>
+          <div class="card-badge-row">
+            <span class="mini-tag">TDD Suites</span>
+            <span class="mini-tag">State Machines</span>
+            <span class="mini-tag">ADRs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         11. CAPABILITIES & SERVICES
+         ======================================================================= -->
+    <section class="section" id="services">
+      <div class="section-header-center">
+        <div class="section-eyebrow">PRO CAPABILITIES</div>
+        <h2 class="section-title">Core Engineering Services</h2>
+        <p class="section-desc">Available for fractional staff engineering, high-stakes architectural overhauls, and greenfield product builds.</p>
+      </div>
+
+      <div class="services-grid" id="services-grid">
+        <!-- Dynamically populated from portfolio-data.js -->
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         12. METHODOLOGY & SPRINTS
+         ======================================================================= -->
+    <section class="section" id="process">
+      <div class="section-header-center">
+        <div class="section-eyebrow">METHODOLOGY</div>
+        <h2 class="section-title">The Engineering Lifecycle</h2>
+        <p class="section-desc">Predictable, test-driven sprints delivering working vertical slices each week.</p>
+      </div>
+
+      <div class="process-grid" id="process-grid">
+        <!-- Dynamically populated from portfolio-data.js -->
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         13. CLIENT PROOF & ENDORSEMENTS
+         ======================================================================= -->
+    <section class="section" id="testimonials">
+      <div class="section-header-center">
+        <div class="section-eyebrow">VERIFIED ENDORSEMENTS</div>
+        <h2 class="section-title">Trusted by Founders &amp; Engineering Leaders</h2>
+        <p class="section-desc">What collaborators say about working with Yash.</p>
+      </div>
+
+      <div class="testimonials-grid" id="testimonials-grid">
+        <!-- Dynamically populated from portfolio-data.js -->
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         14. FREQUENTLY ASKED QUESTIONS
+         ======================================================================= -->
+    <section class="section" id="faq">
+      <div class="section-header-center">
+        <div class="section-eyebrow">COMMON QUESTIONS</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Clear answers regarding contracts, communication cadence, and intellectual property transfer.</p>
+      </div>
+
+      <div class="faq-container" id="faq-list">
+        <!-- Dynamically populated from portfolio-data.js -->
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         15. CONTACT & ENGAGEMENT FINALE (Apple Specialist Standard)
+         ======================================================================= -->
+    <section class="section" id="contact">
+      <div class="contact-cta-card">
+        <span class="cta-badge">ENGINEERING PARTNERSHIP</span>
+        <h2 class="cta-headline">Build with YaanStack Technologies.</h2>
+        <p class="cta-body">
+          Ready to turn your vision into production software? Partner with our autonomous engineering studio for high-velocity 21-day SaaS MVPs, sovereign mobile systems, and AI workflows.
+        </p>
+
+        <div class="cta-direct-email">
+          <span class="email-label">DIRECT INBOX:</span>
+          <span class="email-address" id="dev-email-text">work.developmentwithyash@gmail.com</span>
+          <button class="btn-copy-cta" id="btn-copy-email-bottom" type="button" aria-label="Copy email address to clipboard">
+            <span id="copy-btn-text-bottom">Copy Email</span>
+          </button>
+        </div>
+
+        <div class="cta-action-row">
+          <a href="mailto:work.developmentwithyash@gmail.com?subject=Project%20Inquiry%20via%20Portfolio" class="btn-apple-primary" id="btn-mailto-cta">
+            <span>Send Direct Email</span>
+            <span class="chevron" aria-hidden="true">›</span>
+          </a>
+          <a href="https://github.com/yashdev" target="_blank" rel="noopener noreferrer" class="btn-apple-secondary">
+            <span>GitHub Profile</span>
+            <span class="chevron" aria-hidden="true">›</span>
+          </a>
+          <a href="https://linkedin.com/in/yashdev" target="_blank" rel="noopener noreferrer" class="btn-apple-link">
+            <span>LinkedIn Dossier</span>
+            <span class="chevron" aria-hidden="true">›</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       16. ACCESSIBLE APPLE PRO SPEC MODAL DIALOG
+       ======================================================================= -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-card" id="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" type="button" aria-label="Close project details">
+        &times;
+      </button>
+
+      <span class="modal-badge" id="modal-badge">Production Ready</span>
+      <h3 class="modal-title" id="modal-title">Project Title</h3>
+      <p class="modal-tagline" id="modal-tagline">Project tagline here</p>
+
+      <div class="modal-media" id="modal-media">
+        <img id="modal-img" src="" alt="Project architecture screenshot">
+      </div>
+
+      <div class="card-metrics-row" id="modal-metrics">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <h4 class="modal-section-title">System Overview</h4>
+      <p id="modal-desc" class="modal-body-desc"></p>
+
+      <h4 class="modal-section-title">Key Architectural Highlights</h4>
+      <ul class="modal-highlights" id="modal-highlights">
+        <!-- Rendered dynamically -->
+      </ul>
+
+      <h4 class="modal-section-title">Architecture Notes</h4>
+      <div class="modal-architecture-box" id="modal-architecture-box">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <h4 class="modal-section-title">Technology Stack</h4>
+      <div class="card-stack" id="modal-stack">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="modal-actions" id="modal-actions">
+        <a href="#" class="btn-apple-primary" id="modal-live-link" target="_blank" rel="noopener noreferrer">
+          <span>Inspect System</span>
+          <span class="arrow-glyph" aria-hidden="true">↗</span>
+        </a>
+        <a href="#" class="btn-apple-secondary" id="modal-github-link" target="_blank" rel="noopener noreferrer">
+          <span>Repository</span>
+          <span class="arrow-glyph" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       17. AUTHENTIC CUPERTINO GLOBAL FOOTER (#ac-globalfooter)
+       ======================================================================= -->
+  <footer id="ac-globalfooter" class="no-js" role="contentinfo" aria-labelledby="ac-gf-label">
+    <div class="ac-gf-content">
+      <h2 class="ac-gf-label" id="ac-gf-label">Colophon and Directory</h2>
+
+      <!-- Footnotes / Sosumi -->
+      <section class="ac-gf-sosumi" aria-label="Footnotes">
+        <ol>
+          <li id="footnote-1">Edge NLP intent triage is benchmarked on Snapdragon 8 Gen 3 hardware under 150ms cold-start latency with local quantization.</li>
+          <li id="footnote-2">Cryptographic vaults utilize hardware-backed Android KeyStore / iOS Secure Enclave with authenticated AES-GCM-256 local encryption.</li>
+          <li id="footnote-3">60–120 FPS frame pacing targets are verified through Android Studio GPU Profiler and Unity Frame Debugger with zero heap allocations per frame.</li>
+          <li id="footnote-4">Contracts and technical advisory are executed through standardized bilateral IP assignment agreements and verified milestone handoffs.</li>
+        </ol>
+      </section>
+
+      <!-- 5-Column Directory Navigation -->
+      <nav class="ac-gf-directory with-5-columns" aria-label="Directory" role="navigation">
+        <div class="ac-gf-directory-column">
+          <div class="ac-gf-directory-column-section">
+            <h3 class="ac-gf-directory-column-section-title">Flagship Systems</h3>
+            <ul class="ac-gf-directory-column-section-list">
+              <li><a class="ac-gf-directory-column-section-link" href="#billboard-yaan">YAAN Mobile OS</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#billboard-examprep">ExamPrepOS</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#billboard-driftbound">DRIFTBOUND 3D</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#projects">Colab-Claude Bridge</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#projects">EOS &amp; BOS Platform</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ac-gf-directory-column">
+          <div class="ac-gf-directory-column-section">
+            <h3 class="ac-gf-directory-column-section-title">Capabilities</h3>
+            <ul class="ac-gf-directory-column-section-list">
+              <li><a class="ac-gf-directory-column-section-link" href="#services">Offline-First Mobile OS</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#services">On-Device AI Pipelines</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#services">Real-Time 3D Graphics</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#services">State Machine Architecture</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#services">Fractional Staff Lead</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ac-gf-directory-column">
+          <div class="ac-gf-directory-column-section">
+            <h3 class="ac-gf-directory-column-section-title">Architecture</h3>
+            <ul class="ac-gf-directory-column-section-list">
+              <li><a class="ac-gf-directory-column-section-link" href="#philosophy">Zero Network Stalls</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#philosophy">Sub-150ms Latency</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#philosophy">0 B / frame GC Churn</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#compare">System Spec Matrix</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#process">TDD Sprint Cycles</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ac-gf-directory-column">
+          <div class="ac-gf-directory-column-section">
+            <h3 class="ac-gf-directory-column-section-title">Open Repositories</h3>
+            <ul class="ac-gf-directory-column-section-list">
+              <li><a class="ac-gf-directory-column-section-link" href="https://github.com/yashsiwacha/yaan" target="_blank" rel="noopener noreferrer">YAAN on GitHub</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="https://github.com/yashsiwacha/ExamPrepOS" target="_blank" rel="noopener noreferrer">ExamPrepOS on GitHub</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="https://github.com/yashdev" target="_blank" rel="noopener noreferrer">GitHub Profile</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="https://linkedin.com/in/yashdev" target="_blank" rel="noopener noreferrer">LinkedIn Dossier</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ac-gf-directory-column">
+          <div class="ac-gf-directory-column-section">
+            <h3 class="ac-gf-directory-column-section-title">Direct Contact</h3>
+            <ul class="ac-gf-directory-column-section-list">
+              <li><a class="ac-gf-directory-column-section-link" href="mailto:work.developmentwithyash@gmail.com">work.developmentwithyash@gmail.com</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#contact">Schedule Advisory Call</a></li>
+              <li><a class="ac-gf-directory-column-section-link" href="#faq">Engagement FAQ</a></li>
+              <li><span class="ac-gf-directory-column-section-link" style="color: #6e6e73;">Gurugram / Noida / Remote</span></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Bottom Legal Row -->
+      <div class="ac-gf-footer">
+        <div class="ac-gf-footer-legal-copyright">
+          Copyright &copy; <span id="current-year">2026</span> YaanStack Technologies. All rights reserved.
+        </div>
+        <ul class="ac-gf-footer-legal-links">
+          <li><a class="ac-gf-footer-legal-link" href="#hero">Privacy Policy</a></li>
+          <li><a class="ac-gf-footer-legal-link" href="#hero">Terms of Use</a></li>
+          <li><a class="ac-gf-footer-legal-link" href="#contact">Inquiries</a></li>
+          <li><a class="ac-gf-footer-legal-link" href="#hero">Legal</a></li>
+          <li><a class="ac-gf-footer-legal-link" href="#projects">Site Map</a></li>
+        </ul>
+        <div class="ac-gf-footer-locale">
+          India (English)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/vendor/gsap.min.js?v=4.1.0"></script>
+  <script src="js/vendor/ScrollTrigger.min.js?v=4.1.0"></script>
+  <script src="js/vendor/lenis.min.js?v=4.1.0"></script>
+  <script type="module" src="js/main.js?v=4.1.0"></script>
+</body>
+</html>
