@@ -392,9 +392,13 @@ body:hover #ambient-spotlight {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 6px 12px;
   gap: 0.2rem;
   font-weight: 500;
-  transition: color 0.2s ease, text-decoration 0.2s ease;
+  touch-action: manipulation;
+  transition: color 0.2s ease, text-decoration 0.2s ease, transform 0.15s ease;
 }
 
 .apple-ribbon-link:hover {
@@ -1819,8 +1823,10 @@ body:hover #ambient-spotlight {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 50%;
   background: var(--canvas-surface-subtle);
   border: 1px solid var(--border-dark-subtle);
@@ -1831,6 +1837,7 @@ body:hover #ambient-spotlight {
   display: flex;
   align-items: center;
   justify-content: center;
+  touch-action: manipulation;
   transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
@@ -2014,9 +2021,14 @@ body:hover #ambient-spotlight {
 }
 
 .ac-gf-directory-column-section-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 0;
   color: var(--text-light-muted);
   text-decoration: none;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
+  touch-action: manipulation;
   transition: color 0.15s ease;
 }
 
@@ -2046,12 +2058,18 @@ body:hover #ambient-spotlight {
   align-items: center;
   gap: 1rem;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .ac-gf-footer-legal-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 4px;
   color: var(--text-light-muted);
   text-decoration: none;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
+  touch-action: manipulation;
 }
 
 .ac-gf-footer-legal-link:hover {

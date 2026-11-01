@@ -81,17 +81,29 @@ async function runAudit() {
     const startTime = Date.now();
     const response = await page.goto(TARGET_URL, { waitUntil: 'commit', timeout: 30000 });
     // Allow styles, fonts, and DOM transformations to render smoothly
-    await page.waitForTimeout(2500);
+    await page.waitForTimeout(2000);
+
+    // Scroll to decode lazy loaded images and initialize scroll animations
+    await page.evaluate(async () => {
+      window.scrollTo(0, document.body.scrollHeight * 0.33);
+      await new Promise(r => setTimeout(r, 300));
+      window.scrollTo(0, document.body.scrollHeight * 0.66);
+      await new Promise(r => setTimeout(r, 300));
+      window.scrollTo(0, document.body.scrollHeight);
+      await new Promise(r => setTimeout(r, 400));
+      window.scrollTo(0, 0);
+      await new Promise(r => setTimeout(r, 300));
+    });
     const loadDuration = Date.now() - startTime;
     const status = response ? response.status() : null;
 
     // Capture Viewport Hero Screenshot
     const heroShotPath = path.join(SCREENSHOT_DIR, `${vp.name}_hero.png`);
-    await page.screenshot({ path: heroShotPath, fullPage: false });
+    await page.screenshot({ path: heroShotPath, fullPage: false, animations: 'disabled', timeout: 30000 });
 
     // Capture Full Page Screenshot
     const fullShotPath = path.join(SCREENSHOT_DIR, `${vp.name}_fullpage.png`);
-    await page.screenshot({ path: fullShotPath, fullPage: true });
+    await page.screenshot({ path: fullShotPath, fullPage: true, animations: 'disabled', timeout: 30000 });
 
     // Copy to artifact directory if available
     if (fs.existsSync(ARTIFACT_DIR)) {

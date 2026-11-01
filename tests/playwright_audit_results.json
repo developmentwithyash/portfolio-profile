@@ -1,160 +1,136 @@
 {
   "targetUrl": "https://portfolio-profile-nine-jet.vercel.app",
-  "timestamp": "2026-10-31T21:42:49.986Z",
+  "timestamp": "2026-11-01T01:50:04.420Z",
   "viewports": {
     "desktop": {
       "viewport": "1440x900",
       "httpStatus": 200,
-      "loadDurationMs": 5208,
+      "loadDurationMs": 2891,
       "heroScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/desktop_hero.png",
       "fullpageScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/desktop_fullpage.png",
       "touchViolationsCount": 0,
       "sampleTouchViolations": [],
       "perfTiming": {
         "dns": 5,
-        "tcp": 1478,
-        "ttfb": 1188,
-        "responseDuration": 24,
-        "domInteractive": 6812,
-        "domContentLoaded": 6822,
-        "loadComplete": 9564,
-        "transferSize": 9465,
-        "decodedBodySize": 41349
+        "tcp": 267,
+        "ttfb": 79,
+        "responseDuration": 19,
+        "domInteractive": 1309,
+        "domContentLoaded": 1337,
+        "loadComplete": 1762,
+        "transferSize": 9430,
+        "decodedBodySize": 41347
       }
     },
     "tablet": {
       "viewport": "768x1024",
       "httpStatus": 200,
-      "loadDurationMs": 4583,
+      "loadDurationMs": 2978,
       "heroScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/tablet_hero.png",
       "fullpageScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/tablet_fullpage.png",
-      "touchViolationsCount": 83,
+      "touchViolationsCount": 42,
       "sampleTouchViolations": [
         {
           "tag": "a",
-          "text": "YaanStack",
-          "href": "#hero",
-          "width": 102,
-          "height": 23,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "Overview",
-          "href": "#hero",
-          "width": 52,
-          "height": 15,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "YAAN",
-          "href": "#billboard-yaan",
-          "width": 32,
-          "height": 15,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "ExamPrepOS",
-          "href": "#billboard-examprep",
-          "width": 72,
-          "height": 15,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "DRIFTBOUND",
-          "href": "#billboard-driftbound",
-          "width": 77,
-          "height": 15,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "Projects",
-          "href": "#projects",
-          "width": 45,
-          "height": 15,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "Philosophy",
-          "href": "#philosophy",
-          "width": 61,
-          "height": 15,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "Capabilities",
-          "href": "#services",
-          "width": 65,
-          "height": 15,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "Tech Specs",
-          "href": "#compare",
-          "width": 34,
-          "height": 39,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "Contact",
+          "text": "Start a Project\n›",
           "href": "#contact",
-          "width": 44,
-          "height": 15,
+          "width": 100,
+          "height": 28,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
           "isVisible": true
         }
       ],
       "perfTiming": {
-        "dns": 2,
-        "tcp": 1064,
-        "ttfb": 996,
-        "responseDuration": 10,
-        "domInteractive": 5687,
-        "domContentLoaded": 5691,
-        "loadComplete": 7081,
-        "transferSize": 9465,
-        "decodedBodySize": 41349
+        "dns": 3,
+        "tcp": 308,
+        "ttfb": 153,
+        "responseDuration": 8,
+        "domInteractive": 1537,
+        "domContentLoaded": 1554,
+        "loadComplete": 2162,
+        "transferSize": 9430,
+        "decodedBodySize": 41347
       }
     },
     "mobile": {
       "viewport": "375x812",
       "httpStatus": 200,
-      "loadDurationMs": 3554,
+      "loadDurationMs": 2865,
       "heroScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/mobile_hero.png",
       "fullpageScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/mobile_fullpage.png",
-      "touchViolationsCount": 69,
+      "touchViolationsCount": 42,
       "sampleTouchViolations": [
-        {
-          "tag": "a",
-          "text": "YaanStack",
-          "href": "#hero",
-          "width": 102,
-          "height": 23,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "Search and filter systems",
-          "href": "#projects",
-          "width": 28,
-          "height": 28,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "Contact and Advisory",
-          "href": "#contact",
-          "width": 28,
-          "height": 28,
-          "isVisible": true
-        },
         {
           "tag": "a",
           "text": "Start a Project\n›",
@@ -165,144 +141,110 @@
         },
         {
           "tag": "button",
-          "text": "⧉\nCopy Email",
+          "text": "📱\nView on Phone Screen",
           "href": null,
-          "width": 260,
-          "height": 43,
-          "isVisible": true
-        },
-        {
-          "tag": "a",
-          "text": "Direct Inquiries\n›",
-          "href": "mailto:work.developmentwithyash@gmail.com",
-          "width": 260,
-          "height": 28,
+          "width": 179,
+          "height": 34,
           "isVisible": true
         },
         {
           "tag": "button",
-          "text": "01",
+          "text": "📱\nView on Phone Screen",
           "href": null,
-          "width": 38,
-          "height": 23,
+          "width": 179,
+          "height": 34,
           "isVisible": true
         },
         {
           "tag": "button",
-          "text": "02",
+          "text": "📱\nView on Phone Screen",
           "href": null,
-          "width": 38,
-          "height": 23,
+          "width": 179,
+          "height": 34,
           "isVisible": true
         },
         {
           "tag": "button",
-          "text": "03",
+          "text": "📱\nView on Phone Screen",
           "href": null,
-          "width": 38,
-          "height": 23,
+          "width": 179,
+          "height": 34,
           "isVisible": true
         },
         {
           "tag": "button",
-          "text": "04",
+          "text": "📱\nView on Phone Screen",
           "href": null,
-          "width": 38,
-          "height": 23,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "📱\nView on Phone Screen",
+          "href": null,
+          "width": 179,
+          "height": 34,
           "isVisible": true
         }
       ],
       "perfTiming": {
-        "dns": 2,
-        "tcp": 514,
-        "ttfb": 523,
-        "responseDuration": 4,
-        "domInteractive": 3454,
-        "domContentLoaded": 3458,
-        "loadComplete": 5989,
-        "transferSize": 9465,
-        "decodedBodySize": 41349
+        "dns": 3,
+        "tcp": 250,
+        "ttfb": 89,
+        "responseDuration": 16,
+        "domInteractive": 1095,
+        "domContentLoaded": 1110,
+        "loadComplete": 1541,
+        "transferSize": 9430,
+        "decodedBodySize": 41347
       }
     }
   },
   "networkSummary": {
-    "totalRequests": 12,
-    "failedRequestsCount": 3,
-    "failedRequestsDetails": [
-      {
-        "url": "https://portfolio-profile-nine-jet.vercel.app/js/vendor/ScrollTrigger.min.js?v=4.1.0",
-        "failure": "net::ERR_ABORTED"
-      },
-      {
-        "url": "https://portfolio-profile-nine-jet.vercel.app/js/vendor/lenis.min.js?v=4.1.0",
-        "failure": "net::ERR_ABORTED"
-      },
-      {
-        "url": "https://portfolio-profile-nine-jet.vercel.app/js/vendor/gsap.min.js?v=4.1.0",
-        "failure": "net::ERR_ABORTED"
-      }
-    ],
+    "totalRequests": 15,
+    "failedRequestsCount": 0,
+    "failedRequestsDetails": [],
     "resourceTypes": {
       "document": 1,
-      "stylesheet": 2,
       "image": 7,
-      "script": 1,
+      "stylesheet": 2,
+      "script": 4,
       "font": 1
     }
   },
-  "consoleMessages": [
-    {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "type": "warning",
-      "text": "[PhoneDemo] GSAP or ScrollTrigger not available. Static fallback active."
-    },
-    {
-      "type": "warning",
-      "text": "[PhoneDemo] GSAP or ScrollTrigger not available. Static fallback active."
-    },
-    {
-      "type": "warning",
-      "text": "[PhoneDemo] GSAP or ScrollTrigger not available. Static fallback active."
-    },
-    {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    },
-    {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 404 ()"
-    }
-  ],
+  "consoleMessages": [],
   "pageErrors": [],
   "domAnalysis": {
     "title": "YaanStack Technologies — Autonomous Digital Foundry & Engineering Studio",
     "totalHeadings": 61,
     "totalImages": 25,
-    "brokenImagesCount": 24,
+    "brokenImagesCount": 20,
     "brokenImages": [
-      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/yaan-daily-briefing.png",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/yaan-ask-intelligence.png",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/yaan-vault-setup.png",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/yaan-onboarding.png",
       "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-dashboard.png",
       "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-practice.png",
       "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-vault.png",
@@ -469,54 +411,10 @@
     "missingAlts": [],
     "touchTargetViolations": [
       {
-        "element": "a: \"YaanStack\"",
-        "dimensions": "102x23px"
-      },
-      {
-        "element": "a: \"Search and filter systems\"",
-        "dimensions": "28x28px"
-      },
-      {
-        "element": "a: \"Contact and Advisory\"",
-        "dimensions": "28x28px"
-      },
-      {
         "element": "a: \"Start a Project\n›\"",
         "dimensions": "94x28px"
       },
       {
-        "element": "button: \"⧉\nCopy Email\"",
-        "dimensions": "260x43px"
-      },
-      {
-        "element": "a: \"Direct Inquiries\n›\"",
-        "dimensions": "260x28px"
-      },
-      {
-        "element": "button: \"01\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"02\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"03\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"04\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"PRESENTATION\"",
-        "dimensions": "116x26px"
-      },
-      {
-        "element": "button: \"EXPLORE\"",
-        "dimensions": "78x26px"
-      },
-      {
         "element": "button: \"📱\nView on Phone Screen\"",
         "dimensions": "179x34px"
       },
@@ -533,32 +431,8 @@
         "dimensions": "179x34px"
       },
       {
-        "element": "button: \"01\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"02\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"03\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"04\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"05\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"PRESENTATION\"",
-        "dimensions": "116x26px"
-      },
-      {
-        "element": "button: \"EXPLORE\"",
-        "dimensions": "78x26px"
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
       },
       {
         "element": "button: \"📱\nView on Phone Screen\"",
@@ -581,56 +455,16 @@
         "dimensions": "179x34px"
       },
       {
-        "element": "button: \"01\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"02\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"03\"",
-        "dimensions": "38x23px"
-      },
-      {
-        "element": "button: \"PRESENTATION\"",
-        "dimensions": "116x26px"
-      },
-      {
-        "element": "button: \"EXPLORE\"",
-        "dimensions": "78x26px"
-      },
-      {
         "element": "button: \"📱\nView on Phone Screen\"",
         "dimensions": "179x34px"
       },
       {
         "element": "button: \"📱\nView on Phone Screen\"",
         "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"Explore Specs\"",
-        "dimensions": "124x32px"
-      },
-      {
-        "element": "button: \"Explore Specs\"",
-        "dimensions": "124x32px"
-      },
-      {
-        "element": "button: \"Explore Specs\"",
-        "dimensions": "124x32px"
       },
       {
         "element": "button: \"Copy Email\"",
         "dimensions": "55x38px"
-      },
-      {
-        "element": "a: \"LinkedIn Dossier\n›\"",
-        "dimensions": "139x28px"
       },
       {
         "element": "button: \"×\"",
