@@ -1,239 +1,77 @@
 {
   "targetUrl": "https://portfolio-profile-nine-jet.vercel.app",
-  "timestamp": "2026-11-01T01:50:04.420Z",
+  "timestamp": "2026-11-01T02:05:33.209Z",
   "viewports": {
     "desktop": {
       "viewport": "1440x900",
       "httpStatus": 200,
-      "loadDurationMs": 2891,
+      "loadDurationMs": 4236,
       "heroScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/desktop_hero.png",
       "fullpageScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/desktop_fullpage.png",
       "touchViolationsCount": 0,
       "sampleTouchViolations": [],
       "perfTiming": {
         "dns": 5,
-        "tcp": 267,
-        "ttfb": 79,
-        "responseDuration": 19,
-        "domInteractive": 1309,
-        "domContentLoaded": 1337,
-        "loadComplete": 1762,
-        "transferSize": 9430,
-        "decodedBodySize": 41347
+        "tcp": 280,
+        "ttfb": 122,
+        "responseDuration": 449,
+        "domInteractive": 2550,
+        "domContentLoaded": 2592,
+        "loadComplete": 3231,
+        "transferSize": 9481,
+        "decodedBodySize": 41438
       }
     },
     "tablet": {
       "viewport": "768x1024",
       "httpStatus": 200,
-      "loadDurationMs": 2978,
+      "loadDurationMs": 4326,
       "heroScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/tablet_hero.png",
       "fullpageScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/tablet_fullpage.png",
-      "touchViolationsCount": 42,
-      "sampleTouchViolations": [
-        {
-          "tag": "a",
-          "text": "Start a Project\n›",
-          "href": "#contact",
-          "width": 100,
-          "height": 28,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        }
-      ],
+      "touchViolationsCount": 0,
+      "sampleTouchViolations": [],
       "perfTiming": {
         "dns": 3,
-        "tcp": 308,
-        "ttfb": 153,
-        "responseDuration": 8,
-        "domInteractive": 1537,
-        "domContentLoaded": 1554,
-        "loadComplete": 2162,
-        "transferSize": 9430,
-        "decodedBodySize": 41347
+        "tcp": 456,
+        "ttfb": 544,
+        "responseDuration": 14,
+        "domInteractive": 1712,
+        "domContentLoaded": 1728,
+        "loadComplete": 2194,
+        "transferSize": 9481,
+        "decodedBodySize": 41438
       }
     },
     "mobile": {
       "viewport": "375x812",
       "httpStatus": 200,
-      "loadDurationMs": 2865,
+      "loadDurationMs": 3658,
       "heroScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/mobile_hero.png",
       "fullpageScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/mobile_fullpage.png",
-      "touchViolationsCount": 42,
-      "sampleTouchViolations": [
-        {
-          "tag": "a",
-          "text": "Start a Project\n›",
-          "href": "#contact",
-          "width": 94,
-          "height": 28,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        },
-        {
-          "tag": "button",
-          "text": "📱\nView on Phone Screen",
-          "href": null,
-          "width": 179,
-          "height": 34,
-          "isVisible": true
-        }
-      ],
+      "touchViolationsCount": 0,
+      "sampleTouchViolations": [],
       "perfTiming": {
-        "dns": 3,
-        "tcp": 250,
-        "ttfb": 89,
-        "responseDuration": 16,
-        "domInteractive": 1095,
-        "domContentLoaded": 1110,
-        "loadComplete": 1541,
-        "transferSize": 9430,
-        "decodedBodySize": 41347
+        "dns": 2,
+        "tcp": 216,
+        "ttfb": 114,
+        "responseDuration": 11,
+        "domInteractive": 960,
+        "domContentLoaded": 980,
+        "loadComplete": 1639,
+        "transferSize": 9481,
+        "decodedBodySize": 41438
       }
     }
   },
   "networkSummary": {
-    "totalRequests": 15,
+    "totalRequests": 30,
     "failedRequestsCount": 0,
     "failedRequestsDetails": [],
     "resourceTypes": {
       "document": 1,
-      "image": 7,
-      "stylesheet": 2,
       "script": 4,
+      "stylesheet": 2,
+      "image": 22,
       "font": 1
     }
   },
@@ -243,29 +81,8 @@
     "title": "YaanStack Technologies — Autonomous Digital Foundry & Engineering Studio",
     "totalHeadings": 61,
     "totalImages": 25,
-    "brokenImagesCount": 20,
-    "brokenImages": [
-      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-dashboard.png",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-practice.png",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-vault.png",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-preflight-mock.png",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-assessment.png",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/bridge-preview-DpJZKLkz.jpg",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/eos-preview-D3IlOC6i.jpg",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/yaan-preview-Doi0G_hp.jpg",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/examprep-preview-CHAZCJv5.jpg",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/driftbound-preview-DaAUZ1Zu.jpg",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/yaan-preview-Doi0G_hp.jpg",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/yaan-preview.png",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/examprep-preview.png",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/driftbound-preview.png",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/bridge-preview.jpg",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/eos-preview.jpg",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/yaan-preview-Doi0G_hp.jpg",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/examprep-preview-CHAZCJv5.jpg",
-      "https://portfolio-profile-nine-jet.vercel.app/assets/driftbound-preview-DaAUZ1Zu.jpg",
-      "https://portfolio-profile-nine-jet.vercel.app/"
-    ],
+    "brokenImagesCount": 0,
+    "brokenImages": [],
     "missingAlts": [],
     "totalInteractiveElements": 98,
     "navLinks": [
@@ -409,176 +226,7 @@
   },
   "accessibility": {
     "missingAlts": [],
-    "touchTargetViolations": [
-      {
-        "element": "a: \"Start a Project\n›\"",
-        "dimensions": "94x28px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"📱\nView on Phone Screen\"",
-        "dimensions": "179x34px"
-      },
-      {
-        "element": "button: \"Copy Email\"",
-        "dimensions": "55x38px"
-      },
-      {
-        "element": "button: \"×\"",
-        "dimensions": "35x35px"
-      },
-      {
-        "element": "a: \"YAAN Mobile OS\"",
-        "dimensions": "92x15px"
-      },
-      {
-        "element": "a: \"ExamPrepOS\"",
-        "dimensions": "72x15px"
-      },
-      {
-        "element": "a: \"DRIFTBOUND 3D\"",
-        "dimensions": "96x15px"
-      },
-      {
-        "element": "a: \"Colab-Claude Bridge\"",
-        "dimensions": "116x15px"
-      },
-      {
-        "element": "a: \"EOS & BOS Platform\"",
-        "dimensions": "113x15px"
-      },
-      {
-        "element": "a: \"Offline-First Mobile OS\"",
-        "dimensions": "127x15px"
-      },
-      {
-        "element": "a: \"On-Device AI Pipelines\"",
-        "dimensions": "127x15px"
-      },
-      {
-        "element": "a: \"Real-Time 3D Graphics\"",
-        "dimensions": "128x15px"
-      },
-      {
-        "element": "a: \"State Machine Architecture\"",
-        "dimensions": "151x15px"
-      },
-      {
-        "element": "a: \"Fractional Staff Lead\"",
-        "dimensions": "115x15px"
-      },
-      {
-        "element": "a: \"Zero Network Stalls\"",
-        "dimensions": "109x15px"
-      },
-      {
-        "element": "a: \"Sub-150ms Latency\"",
-        "dimensions": "111x15px"
-      },
-      {
-        "element": "a: \"0 B / frame GC Churn\"",
-        "dimensions": "118x15px"
-      },
-      {
-        "element": "a: \"System Spec Matrix\"",
-        "dimensions": "110x15px"
-      },
-      {
-        "element": "a: \"TDD Sprint Cycles\"",
-        "dimensions": "101x15px"
-      },
-      {
-        "element": "a: \"YAAN on GitHub\"",
-        "dimensions": "91x15px"
-      },
-      {
-        "element": "a: \"ExamPrepOS on GitHub\"",
-        "dimensions": "132x15px"
-      },
-      {
-        "element": "a: \"GitHub Profile\"",
-        "dimensions": "78x15px"
-      },
-      {
-        "element": "a: \"LinkedIn Dossier\"",
-        "dimensions": "92x15px"
-      },
-      {
-        "element": "a: \"work.developmentwithyash@gmail.com\"",
-        "dimensions": "218x15px"
-      },
-      {
-        "element": "a: \"Schedule Advisory Call\"",
-        "dimensions": "127x15px"
-      },
-      {
-        "element": "a: \"Engagement FAQ\"",
-        "dimensions": "96x15px"
-      },
-      {
-        "element": "a: \"Privacy Policy\"",
-        "dimensions": "71x13px"
-      },
-      {
-        "element": "a: \"Terms of Use\"",
-        "dimensions": "68x13px"
-      },
-      {
-        "element": "a: \"Inquiries\"",
-        "dimensions": "44x13px"
-      },
-      {
-        "element": "a: \"Legal\"",
-        "dimensions": "28x13px"
-      },
-      {
-        "element": "a: \"Site Map\"",
-        "dimensions": "45x13px"
-      }
-    ],
+    "touchTargetViolations": [],
     "headingHierarchy": [
       {
         "tag": "h1",
