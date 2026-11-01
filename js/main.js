@@ -3,8 +3,23 @@
  * Silky 120 FPS Native Interaction, Emil Kowalski Springs & Accessibility
  */
 
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
 import { portfolioData } from '../data/portfolio-data.js';
 import { initPhoneDemos } from './phone-demo.js';
+
+// Guarantee global GSAP and Lenis instances for all component lifecycle hooks
+if (typeof window !== 'undefined') {
+  if (!window.gsap) window.gsap = gsap;
+  if (!window.ScrollTrigger) window.ScrollTrigger = ScrollTrigger;
+  if (!window.Lenis) window.Lenis = Lenis;
+  try {
+    window.gsap.registerPlugin(window.ScrollTrigger);
+  } catch (e) {
+    // Already registered
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   initLenis();

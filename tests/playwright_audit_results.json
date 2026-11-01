@@ -1,0 +1,996 @@
+{
+  "targetUrl": "https://portfolio-profile-nine-jet.vercel.app",
+  "timestamp": "2026-10-31T21:42:49.986Z",
+  "viewports": {
+    "desktop": {
+      "viewport": "1440x900",
+      "httpStatus": 200,
+      "loadDurationMs": 5208,
+      "heroScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/desktop_hero.png",
+      "fullpageScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/desktop_fullpage.png",
+      "touchViolationsCount": 0,
+      "sampleTouchViolations": [],
+      "perfTiming": {
+        "dns": 5,
+        "tcp": 1478,
+        "ttfb": 1188,
+        "responseDuration": 24,
+        "domInteractive": 6812,
+        "domContentLoaded": 6822,
+        "loadComplete": 9564,
+        "transferSize": 9465,
+        "decodedBodySize": 41349
+      }
+    },
+    "tablet": {
+      "viewport": "768x1024",
+      "httpStatus": 200,
+      "loadDurationMs": 4583,
+      "heroScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/tablet_hero.png",
+      "fullpageScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/tablet_fullpage.png",
+      "touchViolationsCount": 83,
+      "sampleTouchViolations": [
+        {
+          "tag": "a",
+          "text": "YaanStack",
+          "href": "#hero",
+          "width": 102,
+          "height": 23,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "Overview",
+          "href": "#hero",
+          "width": 52,
+          "height": 15,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "YAAN",
+          "href": "#billboard-yaan",
+          "width": 32,
+          "height": 15,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "ExamPrepOS",
+          "href": "#billboard-examprep",
+          "width": 72,
+          "height": 15,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "DRIFTBOUND",
+          "href": "#billboard-driftbound",
+          "width": 77,
+          "height": 15,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "Projects",
+          "href": "#projects",
+          "width": 45,
+          "height": 15,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "Philosophy",
+          "href": "#philosophy",
+          "width": 61,
+          "height": 15,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "Capabilities",
+          "href": "#services",
+          "width": 65,
+          "height": 15,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "Tech Specs",
+          "href": "#compare",
+          "width": 34,
+          "height": 39,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "Contact",
+          "href": "#contact",
+          "width": 44,
+          "height": 15,
+          "isVisible": true
+        }
+      ],
+      "perfTiming": {
+        "dns": 2,
+        "tcp": 1064,
+        "ttfb": 996,
+        "responseDuration": 10,
+        "domInteractive": 5687,
+        "domContentLoaded": 5691,
+        "loadComplete": 7081,
+        "transferSize": 9465,
+        "decodedBodySize": 41349
+      }
+    },
+    "mobile": {
+      "viewport": "375x812",
+      "httpStatus": 200,
+      "loadDurationMs": 3554,
+      "heroScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/mobile_hero.png",
+      "fullpageScreenshot": "/Users/yashdev/Desktop/Yash-Core/projects/portfolio-profile/tests/screenshots/mobile_fullpage.png",
+      "touchViolationsCount": 69,
+      "sampleTouchViolations": [
+        {
+          "tag": "a",
+          "text": "YaanStack",
+          "href": "#hero",
+          "width": 102,
+          "height": 23,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "Search and filter systems",
+          "href": "#projects",
+          "width": 28,
+          "height": 28,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "Contact and Advisory",
+          "href": "#contact",
+          "width": 28,
+          "height": 28,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "Start a Project\n›",
+          "href": "#contact",
+          "width": 94,
+          "height": 28,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "⧉\nCopy Email",
+          "href": null,
+          "width": 260,
+          "height": 43,
+          "isVisible": true
+        },
+        {
+          "tag": "a",
+          "text": "Direct Inquiries\n›",
+          "href": "mailto:work.developmentwithyash@gmail.com",
+          "width": 260,
+          "height": 28,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "01",
+          "href": null,
+          "width": 38,
+          "height": 23,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "02",
+          "href": null,
+          "width": 38,
+          "height": 23,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "03",
+          "href": null,
+          "width": 38,
+          "height": 23,
+          "isVisible": true
+        },
+        {
+          "tag": "button",
+          "text": "04",
+          "href": null,
+          "width": 38,
+          "height": 23,
+          "isVisible": true
+        }
+      ],
+      "perfTiming": {
+        "dns": 2,
+        "tcp": 514,
+        "ttfb": 523,
+        "responseDuration": 4,
+        "domInteractive": 3454,
+        "domContentLoaded": 3458,
+        "loadComplete": 5989,
+        "transferSize": 9465,
+        "decodedBodySize": 41349
+      }
+    }
+  },
+  "networkSummary": {
+    "totalRequests": 12,
+    "failedRequestsCount": 3,
+    "failedRequestsDetails": [
+      {
+        "url": "https://portfolio-profile-nine-jet.vercel.app/js/vendor/ScrollTrigger.min.js?v=4.1.0",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://portfolio-profile-nine-jet.vercel.app/js/vendor/lenis.min.js?v=4.1.0",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://portfolio-profile-nine-jet.vercel.app/js/vendor/gsap.min.js?v=4.1.0",
+        "failure": "net::ERR_ABORTED"
+      }
+    ],
+    "resourceTypes": {
+      "document": 1,
+      "stylesheet": 2,
+      "image": 7,
+      "script": 1,
+      "font": 1
+    }
+  },
+  "consoleMessages": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "warning",
+      "text": "[PhoneDemo] GSAP or ScrollTrigger not available. Static fallback active."
+    },
+    {
+      "type": "warning",
+      "text": "[PhoneDemo] GSAP or ScrollTrigger not available. Static fallback active."
+    },
+    {
+      "type": "warning",
+      "text": "[PhoneDemo] GSAP or ScrollTrigger not available. Static fallback active."
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    }
+  ],
+  "pageErrors": [],
+  "domAnalysis": {
+    "title": "YaanStack Technologies — Autonomous Digital Foundry & Engineering Studio",
+    "totalHeadings": 61,
+    "totalImages": 25,
+    "brokenImagesCount": 24,
+    "brokenImages": [
+      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/yaan-daily-briefing.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/yaan-ask-intelligence.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/yaan-vault-setup.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/yaan-onboarding.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-dashboard.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-practice.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-vault.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-preflight-mock.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/emulator/examprep-assessment.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/bridge-preview-DpJZKLkz.jpg",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/eos-preview-D3IlOC6i.jpg",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/yaan-preview-Doi0G_hp.jpg",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/examprep-preview-CHAZCJv5.jpg",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/driftbound-preview-DaAUZ1Zu.jpg",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/yaan-preview-Doi0G_hp.jpg",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/yaan-preview.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/examprep-preview.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/driftbound-preview.png",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/bridge-preview.jpg",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/eos-preview.jpg",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/yaan-preview-Doi0G_hp.jpg",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/examprep-preview-CHAZCJv5.jpg",
+      "https://portfolio-profile-nine-jet.vercel.app/assets/driftbound-preview-DaAUZ1Zu.jpg",
+      "https://portfolio-profile-nine-jet.vercel.app/"
+    ],
+    "missingAlts": [],
+    "totalInteractiveElements": 98,
+    "navLinks": [
+      {
+        "text": "YaanStack",
+        "href": "#hero"
+      },
+      {
+        "text": "Overview",
+        "href": "#hero"
+      },
+      {
+        "text": "YAAN",
+        "href": "#billboard-yaan"
+      },
+      {
+        "text": "ExamPrepOS",
+        "href": "#billboard-examprep"
+      },
+      {
+        "text": "DRIFTBOUND",
+        "href": "#billboard-driftbound"
+      },
+      {
+        "text": "Projects",
+        "href": "#projects"
+      },
+      {
+        "text": "Philosophy",
+        "href": "#philosophy"
+      },
+      {
+        "text": "Capabilities",
+        "href": "#services"
+      },
+      {
+        "text": "Tech Specs",
+        "href": "#compare"
+      },
+      {
+        "text": "Contact",
+        "href": "#contact"
+      },
+      {
+        "text": "",
+        "href": "#projects"
+      },
+      {
+        "text": "",
+        "href": "#contact"
+      },
+      {
+        "text": "YAAN Mobile OS",
+        "href": "#billboard-yaan"
+      },
+      {
+        "text": "ExamPrepOS",
+        "href": "#billboard-examprep"
+      },
+      {
+        "text": "DRIFTBOUND 3D",
+        "href": "#billboard-driftbound"
+      },
+      {
+        "text": "Colab-Claude Bridge",
+        "href": "#projects"
+      },
+      {
+        "text": "EOS & BOS Platform",
+        "href": "#projects"
+      },
+      {
+        "text": "Offline-First Mobile OS",
+        "href": "#services"
+      },
+      {
+        "text": "On-Device AI Pipelines",
+        "href": "#services"
+      },
+      {
+        "text": "Real-Time 3D Graphics",
+        "href": "#services"
+      },
+      {
+        "text": "State Machine Architecture",
+        "href": "#services"
+      },
+      {
+        "text": "Fractional Staff Lead",
+        "href": "#services"
+      },
+      {
+        "text": "Zero Network Stalls",
+        "href": "#philosophy"
+      },
+      {
+        "text": "Sub-150ms Latency",
+        "href": "#philosophy"
+      },
+      {
+        "text": "0 B / frame GC Churn",
+        "href": "#philosophy"
+      },
+      {
+        "text": "System Spec Matrix",
+        "href": "#compare"
+      },
+      {
+        "text": "TDD Sprint Cycles",
+        "href": "#process"
+      },
+      {
+        "text": "YAAN on GitHub",
+        "href": "https://github.com/yashsiwacha/yaan"
+      },
+      {
+        "text": "ExamPrepOS on GitHub",
+        "href": "https://github.com/yashsiwacha/ExamPrepOS"
+      },
+      {
+        "text": "GitHub Profile",
+        "href": "https://github.com/yashdev"
+      },
+      {
+        "text": "LinkedIn Dossier",
+        "href": "https://linkedin.com/in/yashdev"
+      },
+      {
+        "text": "work.developmentwithyash@gmail.com",
+        "href": "mailto:work.developmentwithyash@gmail.com"
+      },
+      {
+        "text": "Schedule Advisory Call",
+        "href": "#contact"
+      },
+      {
+        "text": "Engagement FAQ",
+        "href": "#faq"
+      }
+    ]
+  },
+  "accessibility": {
+    "missingAlts": [],
+    "touchTargetViolations": [
+      {
+        "element": "a: \"YaanStack\"",
+        "dimensions": "102x23px"
+      },
+      {
+        "element": "a: \"Search and filter systems\"",
+        "dimensions": "28x28px"
+      },
+      {
+        "element": "a: \"Contact and Advisory\"",
+        "dimensions": "28x28px"
+      },
+      {
+        "element": "a: \"Start a Project\n›\"",
+        "dimensions": "94x28px"
+      },
+      {
+        "element": "button: \"⧉\nCopy Email\"",
+        "dimensions": "260x43px"
+      },
+      {
+        "element": "a: \"Direct Inquiries\n›\"",
+        "dimensions": "260x28px"
+      },
+      {
+        "element": "button: \"01\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"02\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"03\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"04\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"PRESENTATION\"",
+        "dimensions": "116x26px"
+      },
+      {
+        "element": "button: \"EXPLORE\"",
+        "dimensions": "78x26px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"01\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"02\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"03\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"04\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"05\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"PRESENTATION\"",
+        "dimensions": "116x26px"
+      },
+      {
+        "element": "button: \"EXPLORE\"",
+        "dimensions": "78x26px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"01\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"02\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"03\"",
+        "dimensions": "38x23px"
+      },
+      {
+        "element": "button: \"PRESENTATION\"",
+        "dimensions": "116x26px"
+      },
+      {
+        "element": "button: \"EXPLORE\"",
+        "dimensions": "78x26px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"📱\nView on Phone Screen\"",
+        "dimensions": "179x34px"
+      },
+      {
+        "element": "button: \"Explore Specs\"",
+        "dimensions": "124x32px"
+      },
+      {
+        "element": "button: \"Explore Specs\"",
+        "dimensions": "124x32px"
+      },
+      {
+        "element": "button: \"Explore Specs\"",
+        "dimensions": "124x32px"
+      },
+      {
+        "element": "button: \"Copy Email\"",
+        "dimensions": "55x38px"
+      },
+      {
+        "element": "a: \"LinkedIn Dossier\n›\"",
+        "dimensions": "139x28px"
+      },
+      {
+        "element": "button: \"×\"",
+        "dimensions": "35x35px"
+      },
+      {
+        "element": "a: \"YAAN Mobile OS\"",
+        "dimensions": "92x15px"
+      },
+      {
+        "element": "a: \"ExamPrepOS\"",
+        "dimensions": "72x15px"
+      },
+      {
+        "element": "a: \"DRIFTBOUND 3D\"",
+        "dimensions": "96x15px"
+      },
+      {
+        "element": "a: \"Colab-Claude Bridge\"",
+        "dimensions": "116x15px"
+      },
+      {
+        "element": "a: \"EOS & BOS Platform\"",
+        "dimensions": "113x15px"
+      },
+      {
+        "element": "a: \"Offline-First Mobile OS\"",
+        "dimensions": "127x15px"
+      },
+      {
+        "element": "a: \"On-Device AI Pipelines\"",
+        "dimensions": "127x15px"
+      },
+      {
+        "element": "a: \"Real-Time 3D Graphics\"",
+        "dimensions": "128x15px"
+      },
+      {
+        "element": "a: \"State Machine Architecture\"",
+        "dimensions": "151x15px"
+      },
+      {
+        "element": "a: \"Fractional Staff Lead\"",
+        "dimensions": "115x15px"
+      },
+      {
+        "element": "a: \"Zero Network Stalls\"",
+        "dimensions": "109x15px"
+      },
+      {
+        "element": "a: \"Sub-150ms Latency\"",
+        "dimensions": "111x15px"
+      },
+      {
+        "element": "a: \"0 B / frame GC Churn\"",
+        "dimensions": "118x15px"
+      },
+      {
+        "element": "a: \"System Spec Matrix\"",
+        "dimensions": "110x15px"
+      },
+      {
+        "element": "a: \"TDD Sprint Cycles\"",
+        "dimensions": "101x15px"
+      },
+      {
+        "element": "a: \"YAAN on GitHub\"",
+        "dimensions": "91x15px"
+      },
+      {
+        "element": "a: \"ExamPrepOS on GitHub\"",
+        "dimensions": "132x15px"
+      },
+      {
+        "element": "a: \"GitHub Profile\"",
+        "dimensions": "78x15px"
+      },
+      {
+        "element": "a: \"LinkedIn Dossier\"",
+        "dimensions": "92x15px"
+      },
+      {
+        "element": "a: \"work.developmentwithyash@gmail.com\"",
+        "dimensions": "218x15px"
+      },
+      {
+        "element": "a: \"Schedule Advisory Call\"",
+        "dimensions": "127x15px"
+      },
+      {
+        "element": "a: \"Engagement FAQ\"",
+        "dimensions": "96x15px"
+      },
+      {
+        "element": "a: \"Privacy Policy\"",
+        "dimensions": "71x13px"
+      },
+      {
+        "element": "a: \"Terms of Use\"",
+        "dimensions": "68x13px"
+      },
+      {
+        "element": "a: \"Inquiries\"",
+        "dimensions": "44x13px"
+      },
+      {
+        "element": "a: \"Legal\"",
+        "dimensions": "28x13px"
+      },
+      {
+        "element": "a: \"Site Map\"",
+        "dimensions": "45x13px"
+      }
+    ],
+    "headingHierarchy": [
+      {
+        "tag": "h1",
+        "text": "High-Velocity Software. Engineered to Scale."
+      },
+      {
+        "tag": "h2",
+        "text": "YAAN. Sovereign Mobile OS."
+      },
+      {
+        "tag": "h3",
+        "text": "Daily Briefing & Conflict Detection"
+      },
+      {
+        "tag": "h3",
+        "text": "Ask YAAN Executive Intelligence"
+      },
+      {
+        "tag": "h3",
+        "text": "Zero-Knowledge Core & Local Vault"
+      },
+      {
+        "tag": "h3",
+        "text": "Sovereign Neural Onboarding"
+      },
+      {
+        "tag": "h2",
+        "text": "ExamPrepOS. Distraction-Free."
+      },
+      {
+        "tag": "h3",
+        "text": "Aspirant Home & Spaced Repetition"
+      },
+      {
+        "tag": "h3",
+        "text": "Syllabus Mastery & Statistical Gating"
+      },
+      {
+        "tag": "h3",
+        "text": "Mistake Vault & Error Remediation"
+      },
+      {
+        "tag": "h3",
+        "text": "Pre-Flight Mock Test Calibration"
+      },
+      {
+        "tag": "h3",
+        "text": "Examination Performance Report"
+      },
+      {
+        "tag": "h2",
+        "text": "DRIFTBOUND. Pure Physics."
+      },
+      {
+        "tag": "h3",
+        "text": "Race Start & Simulation Loop"
+      },
+      {
+        "tag": "h3",
+        "text": "148 KM/H Active Drift Mechanics"
+      },
+      {
+        "tag": "h3",
+        "text": "Physics Telemetry & GPU Profiler"
+      },
+      {
+        "tag": "h3",
+        "text": "Colab-Claude Bridge"
+      },
+      {
+        "tag": "h3",
+        "text": "EOS & BOS Architecture"
+      },
+      {
+        "tag": "h3",
+        "text": "Sub-150ms Edge Intent"
+      },
+      {
+        "tag": "h3",
+        "text": "120 FPS. Zero Leaks."
+      },
+      {
+        "tag": "h3",
+        "text": "Hardware Sovereignty"
+      },
+      {
+        "tag": "h3",
+        "text": "Fractional Staff Lead"
+      },
+      {
+        "tag": "h2",
+        "text": "Explore All Systems"
+      },
+      {
+        "tag": "h3",
+        "text": "YAAN — Autonomous Action Navigator"
+      },
+      {
+        "tag": "h3",
+        "text": "ExamPrepOS — Autonomous Android Learning OS"
+      },
+      {
+        "tag": "h3",
+        "text": "DRIFTBOUND: Open Roads"
+      },
+      {
+        "tag": "h3",
+        "text": "Colab-Claude Reverse Proxy Bridge"
+      },
+      {
+        "tag": "h3",
+        "text": "EOS & BOS — Autonomous Agency Operating System"
+      },
+      {
+        "tag": "h2",
+        "text": "Compare Systems"
+      },
+      {
+        "tag": "h3",
+        "text": "YAAN"
+      },
+      {
+        "tag": "h3",
+        "text": "ExamPrepOS"
+      },
+      {
+        "tag": "h3",
+        "text": "DRIFTBOUND"
+      },
+      {
+        "tag": "h2",
+        "text": "Architecture Driven by Principles"
+      },
+      {
+        "tag": "h3",
+        "text": "Offline-First Sovereignty"
+      },
+      {
+        "tag": "h3",
+        "text": "Sub-150ms Intent Latency"
+      },
+      {
+        "tag": "h3",
+        "text": "Zero-Allocation Pacing"
+      },
+      {
+        "tag": "h3",
+        "text": "Verifiable TDD Delivery"
+      },
+      {
+        "tag": "h2",
+        "text": "Core Engineering Services"
+      },
+      {
+        "tag": "h3",
+        "text": "Full-Stack SaaS MVP in 21 Days"
+      },
+      {
+        "tag": "h3",
+        "text": "Native & Sovereign Mobile Systems"
+      },
+      {
+        "tag": "h3",
+        "text": "Web Modernization & Motion Craft"
+      },
+      {
+        "tag": "h3",
+        "text": "Autonomous AI Workflows & Edge Systems"
+      },
+      {
+        "tag": "h2",
+        "text": "The Engineering Lifecycle"
+      },
+      {
+        "tag": "h3",
+        "text": "Discovery & Architecture Spike"
+      },
+      {
+        "tag": "h3",
+        "text": "Test-Driven Sprint Build (TDD)"
+      },
+      {
+        "tag": "h3",
+        "text": "Performance, Motion & Security Polish"
+      },
+      {
+        "tag": "h3",
+        "text": "Production Rollout & Full IP Transfer"
+      },
+      {
+        "tag": "h2",
+        "text": "Trusted by Founders & Engineering Leaders"
+      },
+      {
+        "tag": "h2",
+        "text": "Frequently Asked Questions"
+      },
+      {
+        "tag": "h2",
+        "text": "Build with YaanStack Technologies."
+      },
+      {
+        "tag": "h3",
+        "text": "Project Title"
+      },
+      {
+        "tag": "h4",
+        "text": "SYSTEM OVERVIEW"
+      },
+      {
+        "tag": "h4",
+        "text": "KEY ARCHITECTURAL HIGHLIGHTS"
+      },
+      {
+        "tag": "h4",
+        "text": "ARCHITECTURE NOTES"
+      },
+      {
+        "tag": "h4",
+        "text": "TECHNOLOGY STACK"
+      },
+      {
+        "tag": "h2",
+        "text": "Colophon and Directory"
+      },
+      {
+        "tag": "h3",
+        "text": "Flagship Systems"
+      },
+      {
+        "tag": "h3",
+        "text": "Capabilities"
+      },
+      {
+        "tag": "h3",
+        "text": "Architecture"
+      },
+      {
+        "tag": "h3",
+        "text": "Open Repositories"
+      },
+      {
+        "tag": "h3",
+        "text": "Direct Contact"
+      }
+    ]
+  },
+  "performanceMetrics": {}
+}

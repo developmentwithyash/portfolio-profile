@@ -278,6 +278,12 @@ body:hover #ambient-spotlight {
   color: var(--text-light-primary);
 }
 
+.apple-logo-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 .apple-nav-menu {
   display: flex;
   align-items: center;
@@ -286,18 +292,22 @@ body:hover #ambient-spotlight {
 .apple-nav-list {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.25rem;
   list-style: none;
 }
 
 .apple-nav-link {
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 10px;
+  font-size: 0.8125rem;
   font-weight: 400;
   color: var(--text-light-muted);
   opacity: 0.9;
   text-decoration: none;
   letter-spacing: -0.01em;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  transition: opacity 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
 .apple-nav-link:hover {
@@ -308,7 +318,7 @@ body:hover #ambient-spotlight {
 .apple-nav-actions {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 0.75rem;
   flex-shrink: 0;
 }
 
@@ -319,8 +329,10 @@ body:hover #ambient-spotlight {
   color: var(--text-white);
   opacity: 0.85;
   text-decoration: none;
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   transition: opacity 0.2s ease, transform 0.15s ease;
 }
 
@@ -551,12 +563,14 @@ body:hover #ambient-spotlight {
 .btn-apple-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-height: 44px;
   gap: 0.4rem;
   background-color: var(--accent-primary);
   color: var(--text-on-accent);
   font-size: 1.0625rem;
   font-weight: 600;
-  padding: 0.65rem 1.35rem;
+  padding: 0.75rem 1.45rem;
   border-radius: 980px;
   text-decoration: none;
   letter-spacing: -0.01em;
@@ -574,6 +588,7 @@ body:hover #ambient-spotlight {
   background: var(--accent-primary);
   color: var(--text-on-accent);
   font-weight: 600;
+  min-height: 44px;
 }
 
 .btn-apple-gold:hover {
@@ -584,12 +599,14 @@ body:hover #ambient-spotlight {
 .btn-apple-secondary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-height: 44px;
   gap: 0.45rem;
   background: transparent;
   color: var(--text-light-primary);
   font-size: 1.0625rem;
   font-weight: 400;
-  padding: 0.65rem 1.2rem;
+  padding: 0.75rem 1.35rem;
   border-radius: 980px;
   border: 1px solid var(--border-dark-subtle);
   text-decoration: none;
@@ -607,13 +624,16 @@ body:hover #ambient-spotlight {
 .btn-apple-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 12px;
   gap: 0.35rem;
   color: var(--accent-secondary-light);
   font-size: 1.0625rem;
   font-weight: 500;
   text-decoration: none;
   letter-spacing: -0.01em;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.15s ease;
 }
 
 .btn-apple-link:hover {
@@ -636,13 +656,15 @@ body:hover #ambient-spotlight {
 .btn-copy-email {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-height: 44px;
   gap: 0.45rem;
   background: var(--canvas-elevated);
   color: var(--text-light-primary);
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.9375rem;
   font-weight: 500;
-  padding: 0.65rem 1.25rem;
+  padding: 0.75rem 1.35rem;
   border-radius: 980px;
   border: 1px solid var(--border-dark-subtle);
   cursor: pointer;
@@ -1140,15 +1162,19 @@ body:hover #ambient-spotlight {
 .filter-btn {
   position: relative;
   z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   background: transparent;
   border: none;
-  padding: 0.5rem 1.25rem;
+  padding: 0.65rem 1.4rem;
   border-radius: 980px;
   color: var(--text-light-muted);
   font-size: 0.8125rem;
   font-weight: 500;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.15s ease;
 }
 
 .filter-btn:hover {
@@ -2220,3 +2246,46 @@ body:hover #ambient-spotlight {
     scroll-behavior: auto !important;
   }
 }
+
+/* =============================================================================
+   TACTILE MICRO-INTERACTIONS & ACCESSIBILITY (Emil Kowalski & Apple Design)
+   ============================================================================= */
+button:active,
+.btn-apple-primary:active,
+.btn-apple-secondary:active,
+.btn-apple-gold:active,
+.btn-copy-email:active,
+.btn-apple-link:active,
+.filter-btn:active,
+.apple-nav-link:active,
+.apple-nav-icon-link:active,
+.phone-quick-pill:active,
+.demo-mode-btn:active {
+  transform: scale(0.97) !important;
+  transition: transform 100ms ease-out !important;
+}
+
+/* Ensure accessible touch target hit area across all viewports (Apple HIG / WCAG 2.1 AA) */
+.apple-nav-link,
+.apple-logo-link,
+.apple-nav-icon-link,
+.btn-apple-primary,
+.btn-apple-secondary,
+.btn-copy-email,
+.btn-apple-link,
+.filter-btn {
+  touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+  .apple-nav-actions a,
+  .apple-nav-actions button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .billboard-ctas a,
+  .billboard-ctas button {
+    min-height: 48px;
+  }
+}
+
