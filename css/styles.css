@@ -1748,14 +1748,20 @@ body:hover #ambient-spotlight {
 }
 
 .btn-copy-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 80px;
   background: var(--canvas-surface-subtle);
   border: 1px solid var(--border-dark-subtle);
   color: var(--accent-primary);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 600;
-  padding: 0.25rem 0.65rem;
+  padding: 0.65rem 1.25rem;
   border-radius: 980px;
   cursor: pointer;
+  touch-action: manipulation;
   transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
 }
 
@@ -1823,10 +1829,11 @@ body:hover #ambient-spotlight {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  min-height: 44px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  box-sizing: border-box;
   border-radius: 50%;
   background: var(--canvas-surface-subtle);
   border: 1px solid var(--border-dark-subtle);
@@ -2064,8 +2071,10 @@ body:hover #ambient-spotlight {
 .ac-gf-footer-legal-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 44px;
-  padding: 6px 4px;
+  min-width: 44px;
+  padding: 6px 8px;
   color: var(--text-light-muted);
   text-decoration: none;
   font-size: 0.75rem;
