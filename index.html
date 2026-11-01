@@ -682,6 +682,48 @@
   </div>
 
   <!-- =======================================================================
+       16. CONTACT & LEAD INTAKE GATEWAY (#contact)
+       ======================================================================= -->
+  <section class="section" id="contact" style="padding-bottom: 6rem;">
+    <div class="section-header-center">
+      <div class="section-eyebrow">ENGAGE THE FOUNDRY</div>
+      <h2 class="section-title">Initiate an Engineering Sprint</h2>
+      <p class="section-desc">Direct partnership with Staff &amp; Principal systems engineers. Zero junior handoffs. Fixed-scope, zero-cost-toolchain guarantees.</p>
+    </div>
+
+    <div class="contact-card-container" style="max-width: 680px; margin: 0 auto; background: var(--color-surface, #ffffff); border: 1px solid var(--color-border, #e5e5ea); border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 24px rgba(0,0,0,0.04);">
+      <form id="lead-intake-form" onsubmit="event.preventDefault(); window.handleLeadSubmit(event);" style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <div>
+          <label for="lead-name" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; color: #1d1d1f;">Full Name / Founder</label>
+          <input type="text" id="lead-name" name="name" required placeholder="e.g. Alex Vance" style="width: 100%; min-height: 44px; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid #d2d2d7; font-size: 1rem; font-family: inherit; box-sizing: border-box;">
+        </div>
+        <div>
+          <label for="lead-email" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; color: #1d1d1f;">Work Email</label>
+          <input type="email" id="lead-email" name="email" required placeholder="alex@company.com" style="width: 100%; min-height: 44px; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid #d2d2d7; font-size: 1rem; font-family: inherit; box-sizing: border-box;">
+        </div>
+        <div>
+          <label for="lead-service" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; color: #1d1d1f;">Engagement Type</label>
+          <select id="lead-service" name="service" style="width: 100%; min-height: 44px; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid #d2d2d7; font-size: 1rem; font-family: inherit; background: #fff; box-sizing: border-box;">
+            <option value="saas-mvp">SaaS MVP in 21 Days ($3,800 – $6,500)</option>
+            <option value="web-sprint">Web Performance & 3D Sprint ($950 – $1,800)</option>
+            <option value="ai-workflows">Autonomous Agent & Video Workflows ($1,450 – $2,800)</option>
+            <option value="retainer">Fractional Staff Engineering Lead ($1,950/mo)</option>
+          </select>
+        </div>
+        <div>
+          <label for="lead-message" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; color: #1d1d1f;">Project Scope &amp; Objectives</label>
+          <textarea id="lead-message" name="message" rows="3" required placeholder="Briefly outline your product vision, target timeline, or architectural bottleneck..." style="width: 100%; min-height: 88px; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid #d2d2d7; font-size: 1rem; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
+        </div>
+        <button type="submit" id="btn-submit-lead" class="btn-apple-primary" style="min-height: 48px; width: 100%; justify-content: center; font-size: 1rem; cursor: pointer; border: none;">
+          <span>Submit Sprint Brief</span>
+          <span class="arrow-glyph" aria-hidden="true">→</span>
+        </button>
+        <div id="lead-status" style="display: none; padding: 1rem; border-radius: 8px; font-size: 0.875rem; text-align: center;"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- =======================================================================
        17. AUTHENTIC CUPERTINO GLOBAL FOOTER (#ac-globalfooter)
        ======================================================================= -->
   <footer id="ac-globalfooter" class="no-js" role="contentinfo" aria-labelledby="ac-gf-label">

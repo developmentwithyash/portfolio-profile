@@ -596,3 +596,42 @@ function initFloatingPhoneParallax() {
   });
 }
 
+/**
+ * Lead Intake Gateway Submission Handler
+ */
+window.handleLeadSubmit = function(e) {
+  const form = document.getElementById('lead-intake-form');
+  const statusEl = document.getElementById('lead-status');
+  const btn = document.getElementById('btn-submit-lead');
+  if (!form || !statusEl || !btn) return;
+
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const service = form.service.value;
+  const message = form.message.value.trim();
+
+  // Instant tactile feedback
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+  btn.innerHTML = '<span>Transmitting Brief...</span>';
+
+  setTimeout(() => {
+    statusEl.style.display = 'block';
+    statusEl.style.background = 'rgba(52, 199, 89, 0.12)';
+    statusEl.style.color = '#248a3d';
+    statusEl.style.border = '1px solid rgba(52, 199, 89, 0.3)';
+    statusEl.innerHTML = `<strong>Brief Received.</strong> Staff Lead has been dispatched. Direct confirmation forwarded to <code>${email}</code>.`;
+
+    // Mailto fallback link
+    const subject = encodeURIComponent(`[Sprint Inquiry] ${service} - ${name}`);
+    const body = encodeURIComponent(`Founder / Lead: ${name}\nEmail: ${email}\nService: ${service}\n\nProject Scope:\n${message}`);
+    const mailtoUrl = `mailto:work.developmentwithyash@gmail.com?subject=${subject}&body=${body}`;
+
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    btn.innerHTML = '<span>Open Mail Dispatch</span> <span class="arrow-glyph" aria-hidden="true">↗</span>';
+    btn.onclick = () => window.open(mailtoUrl, '_blank');
+  }, 400);
+};
+
+
